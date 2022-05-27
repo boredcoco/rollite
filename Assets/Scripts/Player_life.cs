@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_life : MonoBehaviour
 {
-    [SerializeField] float _health = 10f;
+    [SerializeField] private float _health = 10f;
 
     // Start is called before the first frame update
     void Start()
