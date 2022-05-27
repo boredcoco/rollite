@@ -239,6 +239,9 @@ GameObject:
   - component: {fileID: 702799429}
   - component: {fileID: 702799428}
   - component: {fileID: 702799430}
+  - component: {fileID: 702799432}
+  - component: {fileID: 702799431}
+  - component: {fileID: 702799433}
   m_Layer: 0
   m_Name: Paper Plane
   m_TagString: Player
@@ -284,8 +287,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1722868759
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 01d85c7859de13746ade5ff227551c64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -325,6 +328,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb363ad251954021896b42faf81faf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &702799431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702799427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b31fb2ccf36d7428e4bf202b33b38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  dashSpeed: 20
+--- !u!50 &702799432
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702799427}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &702799433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702799427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdd0fef478f64a3a8abfbcd9671ff0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 10
 --- !u!1 &827952556
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +387,7 @@ GameObject:
   - component: {fileID: 827952559}
   - component: {fileID: 827952558}
   - component: {fileID: 827952557}
+  - component: {fileID: 827952560}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -430,6 +482,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &827952560
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827952556}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000011920929, y: 0}
+  serializedVersion: 2
+  m_Radius: 5.8765445
 --- !u!1 &1287849681
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +509,7 @@ GameObject:
   - component: {fileID: 1287849684}
   - component: {fileID: 1287849683}
   - component: {fileID: 1287849682}
+  - component: {fileID: 1287849685}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -535,6 +604,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1287849685
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287849681}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.7552135, y: 0}
+  serializedVersion: 2
+  m_Radius: 8.142187
 --- !u!1 &1614802949
 GameObject:
   m_ObjectHideFlags: 0
