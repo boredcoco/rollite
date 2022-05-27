@@ -6,15 +6,20 @@ public class Player_life : MonoBehaviour
 {
     [SerializeField] private float _health = 10f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-
+      if (_health <= 0f)
+      {
+        Destroy(gameObject);
+      }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+      if (collision.tag == "Attack")
+      {
+        Destroy(collision.gameObject);
+        _health--;
+      }
     }
 }
