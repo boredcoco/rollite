@@ -6,20 +6,32 @@ public class Player_life : MonoBehaviour
 {
     [SerializeField] private float _health = 10f;
 
+    //animate hit motion
+    private Animator anim;
+
+    private void Start()
+    {
+      anim = GetComponent<Animator>();
+      anim.ResetTrigger("isHit");
+    }
+
     private void Update()
     {
-      if (_health <= 0f)
-      {
-        Destroy(gameObject);
-      }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
       if (collision.tag == "Attack")
       {
-        Destroy(collision.gameObject);
         _health--;
+        anim.SetTrigger("isHit");
+        Destroy(collision.gameObject);
+
+        if (_health <= 0f)
+        {
+          Destroy(gameObject);
+        }
       }
     }
+
 }
