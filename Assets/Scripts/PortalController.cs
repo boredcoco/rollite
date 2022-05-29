@@ -14,7 +14,18 @@ public class PortalController : MonoBehaviour
     private GameObject portal1;
     private GameObject portal2;
 
-    private void Start()
+    private bool portalSpawned = false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+      if (collision.tag == "Player" && !portalSpawned)
+      {
+        spawnPortal();
+        portalSpawned = true;
+      }
+    }
+
+    private void spawnPortal()
     {
       Vector3 portal1_v = new Vector3(portal1_x, portal1_y, transform.position.z);
       Vector3 portal2_v = new Vector3(portal2_x, portal2_y, transform.position.z);
@@ -23,10 +34,5 @@ public class PortalController : MonoBehaviour
 
       portal1.GetComponent<Portal>().linkPortals(portal2);
       portal2.GetComponent<Portal>().linkPortals(portal1);
-    }
-
-    private void Update()
-    {
-
     }
 }
