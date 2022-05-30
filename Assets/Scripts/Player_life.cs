@@ -22,14 +22,7 @@ public class Player_life : MonoBehaviour
     {
       if (collision.tag == "Attack")
       {
-        currentHealth--;
         anim.SetTrigger("isHit");
-        Destroy(collision.gameObject);
-
-        if (currentHealth <= 0f)
-        {
-          Destroy(gameObject);
-        }
       }
     }
 
@@ -43,6 +36,18 @@ public class Player_life : MonoBehaviour
         currentHealth = currentHealth + amount;
       }
       Debug.Log(currentHealth);
+    }
+
+    public void loseHealth(float amount)
+    {
+      if (currentHealth - amount <= 0)
+      {
+        Destroy(gameObject);
+      } else
+      {
+        currentHealth = currentHealth - amount;
+      }
+      Debug.Log("player health:" + currentHealth);
     }
 
 }

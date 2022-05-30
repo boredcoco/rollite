@@ -6,6 +6,12 @@ public class Shield_behaviour : MonoBehaviour
 {
     private GameObject player;
     [SerializeField] private float _shieldHealth = 3f;
+    private float currentHealth;
+
+    private void Start()
+    {
+      currentHealth = _shieldHealth;
+    }
 
     private void Update()
     {
@@ -17,20 +23,24 @@ public class Shield_behaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      if (collision.tag == "Attack")
-      {
-        _shieldHealth--;
-        Destroy(collision.gameObject);
-
-        if (_shieldHealth <= 0f)
-        {
-          Destroy(gameObject);
-        }
-      }
-
       if (collision.tag == "Player" && player == null)
       {
         player = collision.gameObject;
+      }
+    }
+
+    public void loseHealth(float amount)
+    {
+      if (player != null)
+      {
+        if (currentHealth - amount <= 0)
+        {
+          Destroy(gameObject);
+        } else
+        {
+          currentHealth = currentHealth - amount;
+        }
+        Debug.Log("shield health: " + currentHealth);
       }
     }
 }
