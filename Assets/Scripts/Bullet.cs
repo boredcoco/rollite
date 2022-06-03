@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float basePower = 1f;
+    [SerializeField] public float basePower = 1f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

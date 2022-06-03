@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_life : MonoBehaviour
 {
-    [SerializeField] private float _health = 10f;
+    [SerializeField] public float _health = 10f;
     private float currentHealth;
 
     //animate hit motion
@@ -42,7 +41,7 @@ public class Player_life : MonoBehaviour
     {
       if (currentHealth - amount <= 0)
       {
-        Destroy(gameObject);
+            SceneManager.LoadScene(2);
       } else
       {
         currentHealth = currentHealth - amount;

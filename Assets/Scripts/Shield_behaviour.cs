@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shield_behaviour : MonoBehaviour
 {
     private GameObject player;
-    [SerializeField] private float _shieldHealth = 3f;
+    [SerializeField] public float _shieldHealth = 3f;
     private float currentHealth;
 
     private void Start()

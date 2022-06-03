@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPotion : MonoBehaviour
 {
-    [SerializeField] private float restoreAmount = 2f;
+    [SerializeField] public float restoreAmount = 2f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
