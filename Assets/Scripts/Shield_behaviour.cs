@@ -35,7 +35,9 @@ public class Shield_behaviour : MonoBehaviour
       {
         if (currentHealth - amount <= 0)
         {
-          Destroy(gameObject);
+          gameObject.SetActive(false);
+          currentHealth = _shieldHealth;
+          player = null;
         } else
         {
           currentHealth = currentHealth - amount;

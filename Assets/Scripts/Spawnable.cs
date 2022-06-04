@@ -98,7 +98,6 @@ public class Spawnable : MonoBehaviour
         allCoords[allCoords_counter] = coord;
         allCoords_counter++;
         GameObject portalControl = Instantiate(_portalBuff, coord, Quaternion.identity) as GameObject;
-        portalControl.GetComponent<PortalController>().setCoords(this.allCoords);
       }
 
     }

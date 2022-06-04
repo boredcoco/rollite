@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4629930034654104283}
   - component: {fileID: 4629930034654104280}
   - component: {fileID: 4629930034654104285}
+  - component: {fileID: 129908241610292261}
   m_Layer: 0
   m_Name: Debuff
   m_TagString: Untagged
@@ -415,3 +416,15 @@ PolygonCollider2D:
       - {x: 0.69, y: -9.62}
       - {x: 0.75, y: -9.599999}
       - {x: 1.02, y: -9.59}
+--- !u!114 &129908241610292261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629930034654104281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2e584895ef64c2aa3623fd389d8189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
