@@ -14,12 +14,19 @@ public class BasicMovement : MonoBehaviour
     public float currentDashTimer;
     private bool isDashing = false;
 
+    public float maxStamina = 5f;
+    public float currentStamina;
+    public float regenLagTime = 0.1f;
+    public float regenSpeed = 0.1f;
+    private Coroutine regen;
+
     private Rigidbody2D plane;
 
     // Start is called before the first frame update
     void Start()
     {
         plane = GetComponent<Rigidbody2D>();
+        currentStamina = maxStamina;
     }
 
     // Update is called once per frame
@@ -49,9 +56,13 @@ public class BasicMovement : MonoBehaviour
         // Dashing
         if (Input.GetKeyDown(KeyCode.Space) && (Hdirection != 0 || Vdirection != 0))
         {
+          if (currentStamina >= 1)
+          {
             isDashing = true;
             currentDashTimer = startDashTimer;
             plane.velocity = Vector2.zero;
+            currentStamina--;
+          }
         }
 
         if (isDashing)
@@ -66,8 +77,7 @@ public class BasicMovement : MonoBehaviour
             {
                 plane.velocity = new Vector2(Hdirection * dashForce, plane.velocity.y);
             }
-            
-            
+
 
             currentDashTimer -= Time.deltaTime;
 
@@ -77,5 +87,27 @@ public class BasicMovement : MonoBehaviour
             }
         }
 
+        useStamina();
+
     }
+
+
+    public float getCurrStamina()
+    {
+      return currentStamina / maxStamina;
+    }
+
+    private void useStamina()
+    {
+      regen = StartCoroutine(LagTime());
+    }
+
+    private IEnumerator LagTime()
+    {
+      yield return new WaitForSeconds(regenLagTime);
+      currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
+
+      Debug.Log("entered coroutine");
+    }
+
 }
