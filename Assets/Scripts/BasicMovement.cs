@@ -12,7 +12,7 @@ public class BasicMovement : MonoBehaviour
     public float dashForce = 15f;
     public float startDashTimer;
     public float currentDashTimer;
-    private bool isDashing = false;
+    public bool isDashing = false;
 
     public float maxStamina = 5f;
     public float currentStamina;

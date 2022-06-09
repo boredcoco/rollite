@@ -6,6 +6,11 @@ public class Player_life : MonoBehaviour
     [SerializeField] public float _health = 10f;
     private float currentHealth;
 
+    private GameObject paperPlane;
+    private BasicMovement basicMovement;
+    private bool isDashing = false;
+
+
     //animate hit motion
     private Animator anim;
 
@@ -14,12 +19,16 @@ public class Player_life : MonoBehaviour
       anim = GetComponent<Animator>();
       anim.ResetTrigger("isHit");
       currentHealth = _health;
+
+      paperPlane = GameObject.Find("Paper Plane");
+      basicMovement = paperPlane.GetComponent<BasicMovement>();
+      isDashing = basicMovement.isDashing;
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      if (collision.tag == "Attack")
+      if (collision.tag == "Attack" && !isDashing)
       {
         anim.SetTrigger("isHit");
       }
@@ -39,13 +48,18 @@ public class Player_life : MonoBehaviour
 
     public void loseHealth(float amount)
     {
-      if (currentHealth - amount <= 0)
-      {
-            SceneManager.LoadScene(2);
-      } else
-      {
-        currentHealth = currentHealth - amount;
-      }
+        if (!isDashing)
+        {
+            if (currentHealth - amount <= 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+            else
+            {
+                currentHealth = currentHealth - amount;
+            }
+        }
+
       Debug.Log("player health:" + currentHealth);
     }
 
