@@ -99,15 +99,14 @@ public class BasicMovement : MonoBehaviour
 
     private void useStamina()
     {
-      regen = StartCoroutine(LagTime());
+      currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
+      //regen = StartCoroutine(LagTime());
     }
 
     private IEnumerator LagTime()
     {
       yield return new WaitForSeconds(regenLagTime);
       currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
-
-      Debug.Log("entered coroutine");
     }
 
 }

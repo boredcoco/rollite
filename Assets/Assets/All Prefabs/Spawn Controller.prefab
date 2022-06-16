@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1971015314776388048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971015314776388054}
+  - component: {fileID: 1971015314776388053}
+  m_Layer: 0
+  m_Name: Spawn Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1971015314776388054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971015314776388048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.010560349, y: -0.47086546, z: 0.14692926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1971015314776388053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971015314776388048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0397454e2fb4637a30a965cf3fe504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lowerX: -5
+  _upperX: 15
+  _lowerY: -5
+  _upperY: 5
+  _healthPotion: {fileID: 4861631809251136449, guid: 66a4690fc4ed545a288d5232e9a0e87e, type: 3}
+  _debuff: {fileID: 4629930034654104281, guid: 87f0bc40b46ab49cd9fcec3f550a8bea, type: 3}
+  _portalBuff: {fileID: 8161528259728912820, guid: aa99434a9dbf749cbb676cf22dcefb89, type: 3}
+  _shield: {fileID: 5509859839132001350, guid: 9dd9fc333e3d14ba18d28be2f1f0cefc, type: 3}
+  _noOfHealthPotions: 1
+  _noOfDebuffs: 1
+  _noOfPortals: 1
+  _noOfShield: 1

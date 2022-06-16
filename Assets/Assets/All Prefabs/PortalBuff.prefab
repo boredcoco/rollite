@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalTemplate: {fileID: 2457579367633837244, guid: cd7a917d0a8d04621839f748d1e20ae2, type: 3}
-  portal1_x: -5
-  portal1_y: 2
-  portal2_x: 6
-  portal2_y: -2
+  _distanceBetweenPortals: 3
+  _lowerX: -5
+  _upperX: 5
+  _lowerY: -5
+  _upperY: 5
 --- !u!58 &8161528259728912816
 CircleCollider2D:
   m_ObjectHideFlags: 0
