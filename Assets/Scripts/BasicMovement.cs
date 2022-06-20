@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
-    public float speed = 7f;
+    public static float speed = 7f;
 
     private float Hdirection = 0f;
     private float Vdirection = 0f;
 
+    // Dashing
     public float dashForce = 15f;
     public float startDashTimer;
-    public float currentDashTimer;
+    private float currentDashTimer;
     public bool isDashing = false;
 
-    public float maxStamina = 5f;
-    public float currentStamina;
+    // Stamina
+    public float maxStamina = 10f;
+    public float currentStamina = 10f;
     public float regenLagTime = 0.1f;
     public float regenSpeed = 0.1f;
     private Coroutine regen;
@@ -35,63 +37,72 @@ public class BasicMovement : MonoBehaviour
         Hdirection = Input.GetAxis("Horizontal");
         Vdirection = Input.GetAxis("Vertical");
 
-        // Basic Movement
-        if (Hdirection != 0)
+        if (!Quit.quitting)
         {
-            plane.velocity = new Vector2(Hdirection * speed, plane.velocity.y);
-        } else
-        {
-            plane.velocity = new Vector2(0, plane.velocity.y);
-        }
-
-        if (Vdirection != 0)
-        {
-            plane.velocity = new Vector2(plane.velocity.x, Vdirection * speed);
-        }
-        else
-        {
-            plane.velocity = new Vector2(plane.velocity.x, 0);
-        }
-
-        // Dashing
-        if (Input.GetKeyDown(KeyCode.Space) && (Hdirection != 0 || Vdirection != 0))
-        {
-          if (currentStamina >= 1)
-          {
-            isDashing = true;
-            currentDashTimer = startDashTimer;
-            plane.velocity = Vector2.zero;
-            currentStamina--;
-          }
-        }
-
-        if (isDashing)
-        {
+            // Basic Movement
+            if (Hdirection != 0)
+            {
+                plane.velocity = new Vector2(Hdirection * speed, plane.velocity.y);
+            }
+            else
+            {
+                plane.velocity = new Vector2(0, plane.velocity.y);
+            }
 
             if (Vdirection != 0)
             {
-                plane.velocity = new Vector2(plane.velocity.x, Vdirection * dashForce);
+                plane.velocity = new Vector2(plane.velocity.x, Vdirection * speed);
             }
-
-            if (Hdirection != 0)
+            else
             {
-                plane.velocity = new Vector2(Hdirection * dashForce, plane.velocity.y);
+                plane.velocity = new Vector2(plane.velocity.x, 0);
             }
 
-
-            currentDashTimer -= Time.deltaTime;
-
-            if (currentDashTimer <= 0)
+            // Dashing
+            if (Input.GetKeyDown(KeyCode.Space) && (Hdirection != 0 || Vdirection != 0))
             {
-                isDashing = false;
+                if (currentStamina >= 1f)
+                {
+                    isDashing = true;
+                    currentDashTimer = startDashTimer;
+                    plane.velocity = Vector2.zero;
+                    currentStamina--;
+                }
+                else
+                {
+                    isDashing = false;
+                }
             }
+
+            if (isDashing)
+            {
+
+                if (Vdirection != 0)
+                {
+                    plane.velocity = new Vector2(plane.velocity.x, Vdirection * dashForce);
+                }
+
+                if (Hdirection != 0)
+                {
+                    plane.velocity = new Vector2(Hdirection * dashForce, plane.velocity.y);
+                }
+
+
+                currentDashTimer -= Time.deltaTime;
+
+                if (currentDashTimer <= 0)
+                {
+                    isDashing = false;
+                }
+            }
+
+            useStamina();
+
         }
-
-        useStamina();
 
     }
 
-
+    // Stamina
     public float getCurrStamina()
     {
       return currentStamina / maxStamina;
@@ -108,5 +119,4 @@ public class BasicMovement : MonoBehaviour
       yield return new WaitForSeconds(regenLagTime);
       currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
     }
-
 }

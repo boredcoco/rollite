@@ -7,13 +7,47 @@ public class HighScore : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
-    private int timer;
+    private int timer = 0;
 
-    // Update is called once per frame
+    void startTimer()
+    {
+        timer = 0;
+        InvokeRepeating("incrementTime", 1, 1);
+    }
+
+    public void stopTimer()
+    {
+        CancelInvoke();
+    }
+
+    public void continueTimer()
+    {
+        InvokeRepeating("incrementTime", 1, 1);
+    }
+
+    void incrementTime()
+    {
+        timer += 1;
+        scoreText.text = timer.ToString();
+    }
+
+    void Start()
+    {
+        startTimer();
+    }
+
     void Update()
     {
-        timer += (int) Time.time;
-        scoreText.text = timer.ToString();
-       
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Quit.quitting)
+            {
+                continueTimer();
+            }
+            else
+            {
+                stopTimer();
+            }
+        }
     }
 }

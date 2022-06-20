@@ -6,17 +6,18 @@ using UnityEngine.SceneManagement;
 public class Quit : MonoBehaviour
 {
 
-    private bool quitting = false;
-    public GameObject quit;
+    public static bool quitting = false;
+    public GameObject quitPopUp;
 
     public void yesQuit()
     {
         SceneManager.LoadScene(0);
+        quitting = false;
     }
 
     public void noQuit()
     {
-        quit.SetActive(false);
+        quitPopUp.SetActive(false);
         quitting = false;
     }
 
@@ -27,11 +28,11 @@ public class Quit : MonoBehaviour
             if (quitting)
             {
                 quitting = false;
-                quit.SetActive(false);
+                quitPopUp.SetActive(false);
             } else
             {
                 quitting = true;
-                quit.SetActive(true);
+                quitPopUp.SetActive(true);
             }
         }
     }

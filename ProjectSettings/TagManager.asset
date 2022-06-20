@@ -8,6 +8,7 @@ TagManager:
   - Attack
   - Heal
   - Shield
+  - Settings
   layers:
   - Default
   - TransparentFX
