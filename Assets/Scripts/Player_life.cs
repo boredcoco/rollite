@@ -63,4 +63,9 @@ public class Player_life : MonoBehaviour
       Debug.Log("player health:" + currentHealth);
     }
 
+    public float getHealth()
+    {
+      return currentHealth / _health;
+    }
+
 }

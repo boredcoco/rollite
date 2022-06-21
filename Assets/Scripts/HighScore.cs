@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HighScore : MonoBehaviour
 {
 
     public TextMeshProUGUI scoreText;
+    public static string lastScoreTxt = "000"; //new addition
 
     private int timer = 0;
 
@@ -33,21 +35,33 @@ public class HighScore : MonoBehaviour
 
     void Start()
     {
-        startTimer();
+        //just added
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Retry"))
+        {
+          scoreText.text = lastScoreTxt;
+        } else
+        {
+          startTimer(); //this was all that was here originally
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Quit.quitting)
-            {
-                continueTimer();
-            }
-            else
-            {
-                stopTimer();
-            }
+          if (Quit.quitting)
+          {
+            continueTimer();
+          }
+          else
+          {
+            stopTimer();
+          }
+        }
+        //this clause is a new addition
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Retry"))
+        {
+          lastScoreTxt = scoreText.text;
         }
     }
 }

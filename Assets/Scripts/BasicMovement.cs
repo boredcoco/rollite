@@ -110,7 +110,10 @@ public class BasicMovement : MonoBehaviour
 
     private void useStamina()
     {
-      currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
+      if (!Quit.quitting)
+      {
+        currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
+      }
       //regen = StartCoroutine(LagTime());
     }
 

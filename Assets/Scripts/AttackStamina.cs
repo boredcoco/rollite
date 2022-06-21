@@ -37,7 +37,8 @@ public class AttackStamina : MonoBehaviour
 
     private void regenStamina()
     {
-      if (!_attackSelector.GetComponent<AttackSelector>().attackSelected())
+      if (!_attackSelector.GetComponent<AttackSelector>().attackSelected()
+      && !Quit.quitting)
       {
         currentStamina = currentStamina + (_regenStaminaSpeed) * Time.deltaTime;
       }

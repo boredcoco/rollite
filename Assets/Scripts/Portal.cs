@@ -7,8 +7,6 @@ public class Portal : MonoBehaviour
     private GameObject portalController;
     private GameObject otherPortal;
 
-    [SerializeField] private float howFarFromPortal = 1.5f;
-
     public void linkPortals(GameObject other, GameObject control)
     {
       otherPortal = other;
@@ -25,7 +23,7 @@ public class Portal : MonoBehaviour
         collision.transform.position = newPos;
 
         portalController.gameObject.GetComponent<PortalController>().deactivatePortals();
-        
+
         gameObject.SetActive(false);
         otherPortal.gameObject.SetActive(false);
 
