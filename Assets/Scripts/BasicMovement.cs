@@ -19,7 +19,7 @@ public class BasicMovement : MonoBehaviour
     public float maxStamina = 10f;
     public float currentStamina = 10f;
     public float regenLagTime = 0.1f;
-    public float regenSpeed = 0.1f;
+    public float regenSpeed = 0.5f;
     private Coroutine regen;
 
     private Rigidbody2D plane;
@@ -59,7 +59,7 @@ public class BasicMovement : MonoBehaviour
             }
 
             // Dashing
-            if (Input.GetKeyDown(KeyCode.Space) && (Hdirection != 0 || Vdirection != 0))
+            if (Input.GetKeyDown(KeyCode.Space) && (Hdirection != 0 || Vdirection != 0) && !isDashing)
             {
                 if (currentStamina >= 1f)
                 {
@@ -67,10 +67,6 @@ public class BasicMovement : MonoBehaviour
                     currentDashTimer = startDashTimer;
                     plane.velocity = Vector2.zero;
                     currentStamina--;
-                }
-                else
-                {
-                    isDashing = false;
                 }
             }
 
