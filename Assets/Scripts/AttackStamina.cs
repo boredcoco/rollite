@@ -38,9 +38,12 @@ public class AttackStamina : MonoBehaviour
     private void regenStamina()
     {
       if (!_attackSelector.GetComponent<AttackSelector>().attackSelected()
-      && !Quit.quitting)
+      && !Quit.quitting && currentStamina < _maxStamina)
       {
         currentStamina = currentStamina + (_regenStaminaSpeed) * Time.deltaTime;
+      }
+      if (currentStamina > _maxStamina) {
+        currentStamina = _maxStamina;
       }
     }
 }

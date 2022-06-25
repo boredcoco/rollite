@@ -45,7 +45,7 @@ public class Spawnable_oneByOne : MonoBehaviour
   {
     if (currentObject == null || !currentObject.gameObject.activeSelf)
     {
-      if (timer <= 0)
+      if (timer <= 0 && !Quit.quitting)
       {
         currentObject = instantiateObj();
         timer = Random.Range(0f, 5f);

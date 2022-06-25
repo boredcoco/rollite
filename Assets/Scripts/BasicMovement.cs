@@ -93,7 +93,6 @@ public class BasicMovement : MonoBehaviour
             }
 
             useStamina();
-
         }
 
     }
@@ -106,9 +105,12 @@ public class BasicMovement : MonoBehaviour
 
     private void useStamina()
     {
-      if (!Quit.quitting)
+      if (!Quit.quitting && currentStamina < maxStamina)
       {
         currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
+      }
+      if (currentStamina > maxStamina) {
+        currentStamina = maxStamina;
       }
       //regen = StartCoroutine(LagTime());
     }

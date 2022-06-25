@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class Player_life : MonoBehaviour
 {
-    [SerializeField] public float _health = 10f;
+    [SerializeField] private float _animSpeed = 5f;
+
+    [SerializeField] private float _health = 10f;
     private float currentHealth;
 
     private GameObject paperPlane;
@@ -18,6 +20,8 @@ public class Player_life : MonoBehaviour
     {
       anim = GetComponent<Animator>();
       anim.ResetTrigger("isHit");
+      anim.SetFloat("speed", _animSpeed);
+
       currentHealth = _health;
 
       paperPlane = GameObject.Find("Paper Plane");
