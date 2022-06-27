@@ -944,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 1934927033}
     - target: {fileID: 1971015314776388054, guid: 8e78e9c3475c44932966fe968657f18b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1971015314776388054, guid: 8e78e9c3475c44932966fe968657f18b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1342,7 +1342,7 @@ RectTransform:
   - {fileID: 435635076}
   - {fileID: 1934927034}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2483,7 +2483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackStamina: {fileID: 619444725}
-  _attack1: {fileID: 5491696498328553968, guid: 23a4e525f4ede42858a7c35d3a36c0d1, type: 3}
+  _attack1: {fileID: 5849212351057219570, guid: 07386548f84c6467cbd3f87d07e96834, type: 3}
+  _numOfObjects: 5
   basePower: 1
   _lowerX: -5
   _upperX: 10
@@ -3050,6 +3051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackStamina: {fileID: 619444725}
   _attack1: {fileID: 6607601851990326454, guid: c9817d89c056142c3bd8d66c039a9eaa, type: 3}
+  _numOfObjects: 5
   basePower: 1
   _lowerX: -5
   _upperX: 10

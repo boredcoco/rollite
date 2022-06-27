@@ -11,6 +11,15 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _lowerY = -5f;
     [SerializeField] private float _upperY = 5f;
 
+    [SerializeField] private float _lagTime = 0f;
+    private float timer;
+    private bool activeBullet = false;
+
+    private void Start()
+    {
+      timer = _lagTime;
+    }
+
     private void Update()
     {
       if (transform.position.x < _lowerX || transform.position.x > _upperX
@@ -18,18 +27,36 @@ public class Bullet : MonoBehaviour
       {
         gameObject.SetActive(false);
       }
+      if (gameObject.activeSelf)
+      {
+        if (timer <= 0)
+        {
+          activeBullet = true;
+        } else
+        {
+          timer -= Time.deltaTime;
+          activeBullet = false;
+        }
+      }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      if (collision.tag == "Player")
+      if (collision.tag == "Player" && timer <= 0)
       {
         gameObject.SetActive(false);
         collision.gameObject.GetComponent<Player_life>().loseHealth(basePower);
-      } else if (collision.tag == "Shield")
+        timer = _lagTime;
+      } else if (collision.tag == "Shield" && timer <= 0)
       {
         gameObject.SetActive(false);
         collision.gameObject.GetComponent<Shield_behaviour>().loseHealth(basePower);
+        timer = _lagTime;
       }
+    }
+
+    public bool isActiveBullet()
+    {
+      return activeBullet;
     }
 }

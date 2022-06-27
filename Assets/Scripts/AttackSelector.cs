@@ -32,7 +32,7 @@ public class AttackSelector : MonoBehaviour
         } else if (attackType == "attack2")
         {
           _attack2.GetComponent<Image>().color = Color.red;
-          //_attack2.GetComponent<AttackControl_individual>().setSelect(true);
+          _attack2.GetComponent<AttackControl_individual>().setSelect(true);
         } else if (attackType == "attack3")
         {
           _attack3.GetComponent<Image>().color = Color.red;
@@ -58,6 +58,7 @@ public class AttackSelector : MonoBehaviour
       } else if (attackType == "attack2")
       {
         _attack2.GetComponent<Image>().color = Color.white;
+        _attack2.GetComponent<AttackControl_individual>().setSelect(false);
       } else if (attackType == "attack3")
       {
         _attack3.GetComponent<Image>().color = Color.white;

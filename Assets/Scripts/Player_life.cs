@@ -12,7 +12,6 @@ public class Player_life : MonoBehaviour
     private BasicMovement basicMovement;
     private bool isDashing = false;
 
-
     //animate hit motion
     private Animator anim;
 
@@ -32,7 +31,8 @@ public class Player_life : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      if (collision.tag == "Attack" && !isDashing)
+      if (collision.tag == "Attack" && !isDashing
+      && collision.gameObject.GetComponent<Bullet>().isActiveBullet())
       {
         anim.SetTrigger("isHit");
       }
