@@ -329,6 +329,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basePower: 1
+  _lowerX: -7
+  _upperX: 10
+  _lowerY: -5
+  _upperY: 5
+  _lagTime: 0
 --- !u!50 &-1820733072844151190
 Rigidbody2D:
   serializedVersion: 4

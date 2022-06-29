@@ -24,6 +24,8 @@ public class BasicMovement : MonoBehaviour
 
     private Rigidbody2D plane;
 
+    public ScreenBounds screenBounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class BasicMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        screenWrap(transform.localPosition);
+
         Hdirection = Input.GetAxis("Horizontal");
         Vdirection = Input.GetAxis("Vertical");
 
@@ -119,5 +123,19 @@ public class BasicMovement : MonoBehaviour
     {
       yield return new WaitForSeconds(regenLagTime);
       currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
+    }
+
+    // Screen Wrap
+    private void screenWrap(Vector3 tempPosition)
+    {
+        if (screenBounds.AmIOutOfBounds(tempPosition))
+        {
+            Vector2 newPosition = screenBounds.CalculateWrappedPosition(tempPosition);
+            transform.position = newPosition;
+        }
+        else
+        {
+            transform.position = tempPosition;
+        }
     }
 }

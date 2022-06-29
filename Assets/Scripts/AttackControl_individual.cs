@@ -5,12 +5,12 @@ using UnityEngine;
 public class AttackControl_individual : MonoBehaviour
 {
     [SerializeField] private GameObject _attackStamina;
-    [SerializeField] private GameObject _attack1;
+    [SerializeField] private GameObject _attack;
 
     [SerializeField] private int _numOfObjects = 5;
     [SerializeField] private float basePower = 1f;
 
-    [SerializeField] private float _lowerX = -5f;
+    [SerializeField] private float _lowerX = -7f;
     [SerializeField] private float _upperX = 10f;
     [SerializeField] private float _lowerY = -5f;
     [SerializeField] private float _upperY = 5f;
@@ -57,7 +57,7 @@ public class AttackControl_individual : MonoBehaviour
       && _attackStamina.GetComponent<AttackStamina>().canAttack(basePower))
       {
         if (reusableObjects[index] == null) {
-          reusableObjects[index] = Instantiate(_attack1, coords, Quaternion.identity) as GameObject;
+          reusableObjects[index] = Instantiate(_attack, coords, Quaternion.identity) as GameObject;
           _attackStamina.GetComponent<AttackStamina>().depleteStamina(basePower);
         } else if (!reusableObjects[index].activeSelf) {
           reusableObjects[index].gameObject.SetActive(true);

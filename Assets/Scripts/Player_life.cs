@@ -12,20 +12,27 @@ public class Player_life : MonoBehaviour
     private BasicMovement basicMovement;
     private bool isDashing = false;
 
+    public SpriteRenderer spriteRenderer;
+    private Sprite normal;
+    public Sprite hit;
+    public float flashTimer;
+
     //animate hit motion
-    private Animator anim;
+    // private Animator anim;
 
     private void Start()
     {
-      anim = GetComponent<Animator>();
-      anim.ResetTrigger("isHit");
-      anim.SetFloat("speed", _animSpeed);
+      // anim = GetComponent<Animator>();
+      // anim.ResetTrigger("isHit");
+      // anim.SetFloat("speed", _animSpeed);
 
       currentHealth = _health;
 
       paperPlane = GameObject.Find("Paper Plane");
       basicMovement = paperPlane.GetComponent<BasicMovement>();
       isDashing = basicMovement.isDashing;
+
+      normal = PlaneColour.defaultColour;
     }
 
 
@@ -34,8 +41,16 @@ public class Player_life : MonoBehaviour
       if (collision.tag == "Attack" && !isDashing
       && collision.gameObject.GetComponent<Bullet>().isActiveBullet())
       {
-        anim.SetTrigger("isHit");
-      }
+            // anim.SetTrigger("isHit");
+
+            spriteRenderer.sprite = hit;
+            Invoke("resetSprite", flashTimer);
+        }
+    }
+
+    private void resetSprite()
+    {
+        spriteRenderer.sprite = normal;
     }
 
     public void heal(float amount)
