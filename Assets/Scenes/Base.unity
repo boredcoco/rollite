@@ -2780,6 +2780,7 @@ GameObject:
   - component: {fileID: 1489085526}
   - component: {fileID: 1489085525}
   - component: {fileID: 1489085524}
+  - component: {fileID: 1489085527}
   m_Layer: 5
   m_Name: Attack 3
   m_TagString: Untagged
@@ -2902,6 +2903,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489085522}
   m_CullTransparentMesh: 1
+--- !u!114 &1489085527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489085522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackStamina: {fileID: 619444725}
+  _attack: {fileID: 1008570411544772975, guid: 2e127be25149d490c9a7675b95d69fa8, type: 3}
+  _numOfObjects: 5
+  basePower: 1
+  _lowerX: -7
+  _upperX: 10
+  _lowerY: -5
+  _upperY: 5
 --- !u!1 &1558027653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4252,6 +4273,7 @@ GameObject:
   - component: {fileID: 2109837264}
   - component: {fileID: 2109837263}
   - component: {fileID: 2109837262}
+  - component: {fileID: 2109837265}
   m_Layer: 5
   m_Name: Attack 4
   m_TagString: Untagged
@@ -4356,7 +4378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f874f6ff8618cae48a1e45c2b03bfdae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 339fce4818c1a4157a54626dbb646228, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4374,3 +4396,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109837260}
   m_CullTransparentMesh: 1
+--- !u!114 &2109837265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109837260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackStamina: {fileID: 619444725}
+  _attack: {fileID: 2782344125651186781, guid: 859f14eaa52f941e59c179353082618e, type: 3}
+  _numOfObjects: 5
+  basePower: 1
+  _lowerX: -7
+  _upperX: 10
+  _lowerY: -5
+  _upperY: 5

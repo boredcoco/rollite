@@ -15,6 +15,7 @@ public class AttackControl_individual : MonoBehaviour
     [SerializeField] private float _lowerY = -5f;
     [SerializeField] private float _upperY = 5f;
 
+
     private GameObject[] reusableObjects;
     private int index = 0;
     private bool selected = false;
@@ -53,7 +54,7 @@ public class AttackControl_individual : MonoBehaviour
       }
 
 
-      if (coords.x > _lowerX && coords.x < _upperX && coords.y > _lowerY && coords.y < _upperY
+      if (coords.x >= _lowerX && coords.x <= _upperX && coords.y >= _lowerY && coords.y <= _upperY
       && _attackStamina.GetComponent<AttackStamina>().canAttack(basePower))
       {
         if (reusableObjects[index] == null) {

@@ -135,4 +135,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790eaacac6ce446afb2e49cfca0f7fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howFarFromPortal: 1.5
