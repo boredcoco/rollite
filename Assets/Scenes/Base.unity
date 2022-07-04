@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 235246086}
   - component: {fileID: 235246085}
   - component: {fileID: 235246084}
+  - component: {fileID: 235246087}
   m_Layer: 5
   m_Name: Attack 5
   m_TagString: Untagged
@@ -527,6 +528,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235246082}
   m_CullTransparentMesh: 1
+--- !u!114 &235246087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235246082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackStamina: {fileID: 619444725}
+  _attack: {fileID: 1843387448322260854, guid: f4dab8fdb3ea840e7ac3935de4698ed0, type: 3}
+  _numOfObjects: 5
+  basePower: 5
+  _lowerX: -7
+  _upperX: 10
+  _lowerY: -5
+  _upperY: 5
 --- !u!1 &295966550
 GameObject:
   m_ObjectHideFlags: 0

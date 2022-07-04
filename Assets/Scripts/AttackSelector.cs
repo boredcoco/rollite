@@ -44,6 +44,7 @@ public class AttackSelector : MonoBehaviour
         } else if (attackType == "attack5")
         {
           _attack5.GetComponent<Image>().color = Color.red;
+          _attack5.GetComponent<AttackControl_individual>().setSelect(true);
         }
       } else
       {
@@ -72,6 +73,7 @@ public class AttackSelector : MonoBehaviour
       } else if (attackType == "attack5")
       {
         _attack5.GetComponent<Image>().color = Color.white;
+        _attack5.GetComponent<AttackControl_individual>().setSelect(false);
       }
     }
 
