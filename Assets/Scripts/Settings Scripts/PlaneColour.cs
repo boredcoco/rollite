@@ -4,6 +4,7 @@ public class PlaneColour : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
 
+    // Used by Player_life script
     public static Sprite defaultColour;
 
     public Sprite bluePlane;

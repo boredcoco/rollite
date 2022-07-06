@@ -13,9 +13,6 @@ public class ScreenBounds : MonoBehaviour
     [SerializeField]
     private float teleportOffset = 0.2f;
 
-    [SerializeField]
-    private float cornerOffset = 1;
-
     private void Awake()
     {
         this.mainCamera.transform.localScale = Vector3.one;

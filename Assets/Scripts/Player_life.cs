@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Player_life : MonoBehaviour
 {
-    [SerializeField] private float _animSpeed = 5f;
 
     [SerializeField] private float _health = 10f;
     private float currentHealth;
@@ -17,14 +16,8 @@ public class Player_life : MonoBehaviour
     public Sprite hit;
     public float flashTimer;
 
-    //animate hit motion
-    // private Animator anim;
-
     private void Start()
     {
-      // anim = GetComponent<Animator>();
-      // anim.ResetTrigger("isHit");
-      // anim.SetFloat("speed", _animSpeed);
 
       currentHealth = _health;
 
@@ -41,8 +34,6 @@ public class Player_life : MonoBehaviour
       if (collision.tag == "Attack" && !isDashing
       && collision.gameObject.GetComponent<Bullet>().isActiveBullet())
       {
-            // anim.SetTrigger("isHit");
-
             spriteRenderer.sprite = hit;
             Invoke("resetSprite", flashTimer);
         }

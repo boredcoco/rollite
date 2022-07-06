@@ -9,7 +9,7 @@ public class HighScore : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public static string lastScoreTxt = "000"; //new addition
 
-    private int timer = 0;
+    public static int timer = 0;
 
     void startTimer()
     {

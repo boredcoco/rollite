@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 235246085}
   - component: {fileID: 235246084}
   - component: {fileID: 235246087}
+  - component: {fileID: 235246088}
   m_Layer: 5
   m_Name: Attack 5
   m_TagString: Untagged
@@ -473,7 +474,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 235246085}
   m_OnClick:
     m_PersistentCalls:
@@ -548,6 +549,19 @@ MonoBehaviour:
   _upperX: 10
   _lowerY: -5
   _upperY: 5
+--- !u!114 &235246088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235246082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unlockScore: 40
 --- !u!1 &295966550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,6 +2383,7 @@ GameObject:
   - component: {fileID: 1177984459}
   - component: {fileID: 1177984458}
   - component: {fileID: 1177984461}
+  - component: {fileID: 1177984462}
   m_Layer: 5
   m_Name: Attack 2
   m_TagString: Untagged
@@ -2436,7 +2451,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1177984459}
   m_OnClick:
     m_PersistentCalls:
@@ -2473,7 +2488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95d02a3287c78453bb9bef875f42278f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f492889b5825d884da61e608c00673cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2511,6 +2526,19 @@ MonoBehaviour:
   _upperX: 10
   _lowerY: -5
   _upperY: 5
+--- !u!114 &1177984462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177984456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unlockScore: 10
 --- !u!1 &1180370960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,6 +2830,7 @@ GameObject:
   - component: {fileID: 1489085525}
   - component: {fileID: 1489085524}
   - component: {fileID: 1489085527}
+  - component: {fileID: 1489085528}
   m_Layer: 5
   m_Name: Attack 3
   m_TagString: Untagged
@@ -2869,7 +2898,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1489085525}
   m_OnClick:
     m_PersistentCalls:
@@ -2906,7 +2935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e1f6cdc145f724fc0b605d2c29c7c514, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b19d68ee39782e4e8ccbcc2eb0a7bbc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2944,6 +2973,19 @@ MonoBehaviour:
   _upperX: 10
   _lowerY: -5
   _upperY: 5
+--- !u!114 &1489085528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489085522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unlockScore: 20
 --- !u!1 &1558027653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,7 +3267,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   teleportOffset: 0.2
-  cornerOffset: 1
 --- !u!4 &1628432622
 Transform:
   m_ObjectHideFlags: 0
@@ -3354,7 +3395,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 643820854336338670, guid: 4a6feb6549d1e4b3aa4f96f9c994f637, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a6feb6549d1e4b3aa4f96f9c994f637, type: 3}
 --- !u!1 &1697642686 stripped
 GameObject:
@@ -4295,6 +4337,7 @@ GameObject:
   - component: {fileID: 2109837263}
   - component: {fileID: 2109837262}
   - component: {fileID: 2109837265}
+  - component: {fileID: 2109837266}
   m_Layer: 5
   m_Name: Attack 4
   m_TagString: Untagged
@@ -4362,7 +4405,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2109837263}
   m_OnClick:
     m_PersistentCalls:
@@ -4399,7 +4442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 339fce4818c1a4157a54626dbb646228, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13db413199e04d24e99d7c5994cdc6ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4437,3 +4480,16 @@ MonoBehaviour:
   _upperX: 10
   _lowerY: -5
   _upperY: 5
+--- !u!114 &2109837266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109837260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unlockScore: 30

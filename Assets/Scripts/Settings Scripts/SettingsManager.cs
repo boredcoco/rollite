@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class SettingsManager : MonoBehaviour
@@ -9,24 +10,30 @@ public class SettingsManager : MonoBehaviour
     public static Color secondColour = new Color(0.8784314f, 0.4980392f, 0.6039216f, 1);
     public static Color thirdColour = new Color(0.1960784f, 0.1921569f, 0.4666667f, 1);
 
+    public Sprite bluePlane;
+    public Sprite pinkPlane;
+    public Sprite purplePlane;
+
+    public Image plane;
+
     public AudioMixer audioMixer;
-
-    public static SettingsManager instance = null;
-
 
     public void colourOne()
     {
         BGColour.background = firstColour;
+        plane.sprite = bluePlane;
     }
 
     public void colourTwo()
     {
         BGColour.background = secondColour;
+        plane.sprite = pinkPlane;
     }
 
     public void colourThree()
     {
         BGColour.background = thirdColour;
+        plane.sprite = purplePlane;
     }
 
     public void speedOne()

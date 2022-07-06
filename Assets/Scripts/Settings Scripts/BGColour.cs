@@ -12,10 +12,6 @@ public class BGColour : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         cam.clearFlags = CameraClearFlags.SolidColor;
-    }
-
-    private void Update()
-    {
         cam.backgroundColor = background;
     }
 }
