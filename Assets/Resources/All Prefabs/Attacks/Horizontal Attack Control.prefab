@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2541567185459221066, guid: b47c83018c1ae462491ffae38b0d0617, type: 3}
-  _lagTime: 1
+  _lagTime: 0.3

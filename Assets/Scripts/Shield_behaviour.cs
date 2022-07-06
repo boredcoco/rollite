@@ -45,4 +45,8 @@ public class Shield_behaviour : MonoBehaviour
         Debug.Log("shield health: " + currentHealth);
       }
     }
+
+    public bool isActiveShield() {
+      return player != null;
+    }
 }
