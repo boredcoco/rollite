@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
-    public static float speed = 7f;
+    public static float speed = 8f;
 
     private float Hdirection = 0f;
     private float Vdirection = 0f;
 
     // Dashing
-    public float dashForce = 15f;
+    public static float dashForce = 15f;
     public float startDashTimer;
     private float currentDashTimer;
     public bool isDashing = false;

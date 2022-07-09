@@ -1778,7 +1778,7 @@ GameObject:
   - component: {fileID: 619444727}
   m_Layer: 5
   m_Name: fill
-  m_TagString: Untagged
+  m_TagString: Attack Stamina
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackSelector: {fileID: 1180370960}
   _StaminaBar: {fileID: 1625006350}
-  _regenStaminaSpeed: 0.1
+  _regenStaminaSpeed: 0.5
   _maxStamina: 10
 --- !u!114 &619444728
 MonoBehaviour:
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 5849212351057219570, guid: 07386548f84c6467cbd3f87d07e96834, type: 3}
   _numOfObjects: 5
-  basePower: 1
+  basePower: 3
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -2968,7 +2968,7 @@ MonoBehaviour:
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 1008570411544772975, guid: 2e127be25149d490c9a7675b95d69fa8, type: 3}
   _numOfObjects: 5
-  basePower: 1
+  basePower: 2
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -4475,7 +4475,7 @@ MonoBehaviour:
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 2782344125651186781, guid: 859f14eaa52f941e59c179353082618e, type: 3}
   _numOfObjects: 5
-  basePower: 1
+  basePower: 2
   _lowerX: -7
   _upperX: 10
   _lowerY: -5

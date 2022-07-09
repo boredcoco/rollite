@@ -38,17 +38,20 @@ public class SettingsManager : MonoBehaviour
 
     public void speedOne()
     {
-        BasicMovement.speed = 4f;
+        BasicMovement.speed = 6f;
+        BasicMovement.dashForce = 10f;
     }
 
     public void speedTwo()
     {
-        BasicMovement.speed = 7f;
+        BasicMovement.speed = 8f;
+        BasicMovement.dashForce = 15f;
     }
 
     public void speedThree()
     {
-        BasicMovement.speed = 10f;
+        BasicMovement.speed = 12f;
+        BasicMovement.dashForce = 20f;
     }
 
     public void setVolume(float vol)

@@ -9,7 +9,6 @@ public class Player_life : MonoBehaviour
 
     private GameObject paperPlane;
     private BasicMovement basicMovement;
-    private bool isDashing = false;
 
     public SpriteRenderer spriteRenderer;
     private Sprite normal;
@@ -23,7 +22,6 @@ public class Player_life : MonoBehaviour
 
       paperPlane = GameObject.Find("Paper Plane");
       basicMovement = paperPlane.GetComponent<BasicMovement>();
-      isDashing = basicMovement.isDashing;
 
       normal = PlaneColour.defaultColour;
     }
@@ -31,7 +29,7 @@ public class Player_life : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      if (collision.tag == "Attack" && !isDashing
+      if (collision.tag == "Attack" && !basicMovement.isDashing
       && collision.gameObject.GetComponent<Bullet>().isActiveBullet())
       {
             spriteRenderer.sprite = hit;
@@ -58,7 +56,7 @@ public class Player_life : MonoBehaviour
 
     public void loseHealth(float amount)
     {
-        if (!isDashing)
+        if (!basicMovement.isDashing)
         {
             if (currentHealth - amount <= 0)
             {

@@ -35,10 +35,14 @@ public class AttackStamina : MonoBehaviour
       currentStamina -= bp;
     }
 
+    public void debuffStamina()
+    {
+      currentStamina = 0.01f;
+    }
+
     private void regenStamina()
     {
-      if (!_attackSelector.GetComponent<AttackSelector>().attackSelected()
-      && !Quit.quitting && currentStamina < _maxStamina)
+      if (!Quit.quitting && currentStamina < _maxStamina)
       {
         currentStamina = currentStamina + (_regenStaminaSpeed) * Time.deltaTime;
       }
