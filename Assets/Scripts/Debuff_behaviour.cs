@@ -23,6 +23,8 @@ public class Debuff_behaviour : MonoBehaviour
       {
             attackStamina.GetComponent<AttackStamina>().debuffStamina();
             gameObject.SetActive(false);
+            GameObject spawner = GameObject.Find("SpawnController");
+            spawner.gameObject.GetComponent<Spawnable_oneByOne>().decreaseObjCount();
       }
     }
 }

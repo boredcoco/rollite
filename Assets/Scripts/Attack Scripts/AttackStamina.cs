@@ -37,7 +37,7 @@ public class AttackStamina : MonoBehaviour
 
     public void debuffStamina()
     {
-      currentStamina = 0.01f;
+      currentStamina = 0.0f;
     }
 
     private void regenStamina()

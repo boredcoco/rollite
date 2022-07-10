@@ -12,6 +12,8 @@ public class HealthPotion : MonoBehaviour
       {
         collision.GetComponent<Player_life>().heal(restoreAmount);
         gameObject.SetActive(false);
+        GameObject spawner = GameObject.Find("SpawnController");
+        spawner.gameObject.GetComponent<Spawnable_oneByOne>().decreaseObjCount();
       }
     }
 }

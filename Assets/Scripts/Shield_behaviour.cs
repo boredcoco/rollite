@@ -38,12 +38,20 @@ public class Shield_behaviour : MonoBehaviour
           gameObject.SetActive(false);
           currentHealth = _shieldHealth;
           player = null;
+          GameObject spawner = GameObject.Find("SpawnController");
+          spawner.gameObject.GetComponent<Spawnable_oneByOne>().decreaseObjCount();
         } else
         {
           currentHealth = currentHealth - amount;
         }
         Debug.Log("shield health: " + currentHealth);
       }
+    }
+
+    public bool isDashing()
+    {
+      if (player == null) return false;
+      return player.GetComponent<BasicMovement>().isDashing;
     }
 
     public bool isActiveShield() {

@@ -42,16 +42,19 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      Debug.Log("Triggered");
       if (collision.tag == "Player" && timer <= 0)
       {
-        gameObject.SetActive(false);
-        collision.gameObject.GetComponent<Player_life>().loseHealth(basePower);
-        timer = _lagTime;
+        if (!collision.GetComponent<BasicMovement>().isDashing)
+        {
+          gameObject.SetActive(false);
+          collision.gameObject.GetComponent<Player_life>().loseHealth(basePower);
+          timer = _lagTime;
+        }
       } else if (collision.tag == "Shield" && timer <= 0)
       {
         bool activeShield = collision.GetComponent<Shield_behaviour>().isActiveShield();
-        if (activeShield) {
+        bool dashing = collision.GetComponent<Shield_behaviour>().isDashing();
+        if (activeShield && !dashing) {
           gameObject.SetActive(false);
           collision.gameObject.GetComponent<Shield_behaviour>().loseHealth(basePower);
           timer = _lagTime;

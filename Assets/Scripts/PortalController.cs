@@ -24,6 +24,8 @@ public class PortalController : MonoBehaviour
         spawnPortal();
         portalSpawned = true;
         gameObject.SetActive(false);
+        GameObject spawner = GameObject.Find("SpawnController");
+        spawner.gameObject.GetComponent<Spawnable_oneByOne>().decreaseObjCount();
       }
     }
 

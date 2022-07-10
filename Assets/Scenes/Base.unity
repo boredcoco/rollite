@@ -967,7 +967,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1971015314776388048, guid: 8e78e9c3475c44932966fe968657f18b, type: 3}
       propertyPath: m_Name
-      value: Spawn Controller
+      value: SpawnController
       objectReference: {fileID: 0}
     - target: {fileID: 1971015314776388053, guid: 8e78e9c3475c44932966fe968657f18b, type: 3}
       propertyPath: _upperX
