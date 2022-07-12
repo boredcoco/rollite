@@ -10,6 +10,8 @@ public class Spawnable_oneByOne : MonoBehaviour
   [SerializeField] private float _upperBoundTimer = 10f;
   [SerializeField] private int _maxObjectsOnField = 3; // max objects on playing field at any given time
 
+  [SerializeField] private GameObject _obstaleSpawner;
+
   [SerializeField] private float _lowerX = -10f;
   [SerializeField] private float _upperX = 20f;
   [SerializeField] private float _lowerY = -10f;
@@ -78,6 +80,13 @@ public class Spawnable_oneByOne : MonoBehaviour
   {
     float randX = Random.Range(_lowerX, _upperX);
     float randY = Random.Range(_lowerY, _upperY);
+
+    if (_obstaleSpawner != null &&
+    _obstaleSpawner.GetComponent<ObstacleSpawnerScript>().isObstacle((int) randX, (int) randY))
+    {
+      randX = Random.Range(_lowerX, _upperX);
+      randY = Random.Range(_lowerY, _upperY);
+    }
     Vector3 coord = new Vector3(randX, randY, transform.position.z);
 
     if (arr[index] != null) {
