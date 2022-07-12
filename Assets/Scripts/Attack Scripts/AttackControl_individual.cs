@@ -23,9 +23,6 @@ public class AttackControl_individual : MonoBehaviour
     private void Start()
     {
       reusableObjects = new GameObject[_numOfObjects];
-      for (int i = 0; i < _numOfObjects; i++) {
-        reusableObjects[i] = null;
-      }
     }
 
     private void Update()
