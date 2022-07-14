@@ -3,7 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
-    public void restart()
+    public void singleplayerRestart()
+    {
+        SceneManager.LoadScene("SinglePlayer Base");
+    }
+
+    public void multiplayerRestart()
     {
         SceneManager.LoadScene("Base");
     }

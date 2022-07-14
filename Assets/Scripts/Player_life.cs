@@ -60,7 +60,14 @@ public class Player_life : MonoBehaviour
         {
             if (currentHealth - amount <= 0)
             {
-                SceneManager.LoadScene(2);
+                if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Base"))
+                {
+                    SceneManager.LoadScene("MP Retry");
+                }
+                else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SinglePlayer Base"))
+                {
+                    SceneManager.LoadScene("SP Retry");
+                }
             }
             else
             {

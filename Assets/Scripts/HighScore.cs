@@ -7,7 +7,7 @@ public class HighScore : MonoBehaviour
 {
 
     public TextMeshProUGUI scoreText;
-    public static string lastScoreTxt = "000"; //new addition
+    public static string lastScoreTxt = "0"; 
 
     public static int timer = 0;
     private int highscore = 0;
@@ -53,7 +53,8 @@ public class HighScore : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Retry"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SP Retry") 
+            || SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MP Retry"))
         {
           scoreText.text = lastScoreTxt;
         } else
@@ -86,7 +87,8 @@ public class HighScore : MonoBehaviour
           }
         }
    
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Retry"))
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("SP Retry")
+            || SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MP Retry"))
         {
           lastScoreTxt = scoreText.text;
         }
