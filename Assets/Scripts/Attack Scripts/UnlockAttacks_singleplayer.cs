@@ -1,44 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class UnlockAttacks_singleplayer : MonoBehaviour
 {
-    [SerializeField] private float attack2Time = 20f;
-    [SerializeField] private float attack3Time = 40f;
-    [SerializeField] private float attack4Time = 60f;
+    [SerializeField] private float attack2Time = 10f;
+    [SerializeField] private float attack3Time = 20f;
+    [SerializeField] private float attack4Time = 40f;
     [SerializeField] private float attack5Time = 80f;
 
-    private bool attack2Unlocked = false;
-    private bool attack3Unlocked = false;
-    private bool attack4Unlocked = false;
-    private bool attack5Unlocked = false;
+    [SerializeField] private float ai_speed_increment = 1f;
+
+    [SerializeField] private GameObject levelUp;
+
+    private AIPath aipath;
+    private SinglePlayerAttack singlepAttack;
+
+    private void Start()
+    {
+      aipath = GetComponent<AIPath>();
+      singlepAttack = GetComponent<SinglePlayerAttack>();
+    }
 
     private void Update()
     {
-        if (HighScore.timer >= attack2Time) attack2Unlocked = true;
-        if (HighScore.timer >= attack3Time) attack3Unlocked = true;
-        if (HighScore.timer >= attack4Time) attack4Unlocked = true;
-        if (HighScore.timer >= attack5Time) attack5Unlocked = true;
-    }
-
-    public bool attack2_locked()
-    {
-      return attack2Unlocked;
-    }
-
-    public bool attack3_locked()
-    {
-      return attack3Unlocked;
-    }
-
-    public bool attack4_locked()
-    {
-      return attack4Unlocked;
-    }
-
-    public bool attack5_locked()
-    {
-      return attack5Unlocked;
+        if (HighScore.timer >= attack2Time && singlepAttack.maxAttack_Unlocked() < 2)
+        {
+          singlepAttack.unlockAttack();
+          aipath.speed = aipath.speed + ai_speed_increment;
+          levelUp.SetActive(true);
+        }
+        if (HighScore.timer >= attack3Time && singlepAttack.maxAttack_Unlocked() < 3)
+        {
+          singlepAttack.unlockAttack();
+          aipath.speed = aipath.speed + ai_speed_increment;
+          levelUp.SetActive(true);
+        }
+        if (HighScore.timer >= attack4Time && singlepAttack.maxAttack_Unlocked() < 4)
+        {
+          singlepAttack.unlockAttack();
+          aipath.speed = aipath.speed + ai_speed_increment;
+          levelUp.SetActive(true);
+        }
+        if (HighScore.timer >= attack5Time && singlepAttack.maxAttack_Unlocked() < 5)
+        {
+          singlepAttack.unlockAttack();
+          aipath.speed = aipath.speed + ai_speed_increment;
+          levelUp.SetActive(true);
+        }
     }
 }

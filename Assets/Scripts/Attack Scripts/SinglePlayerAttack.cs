@@ -10,7 +10,7 @@ public class SinglePlayerAttack : MonoBehaviour
     [SerializeField] private GameObject staminaBar;
     private AttackStamina staminaComp;
 
-    private UnlockAttacks_singleplayer unlockAttack;
+    private Animator anim;
 
     [SerializeField] private GameObject attack1Prefab;
     [SerializeField] private GameObject attack2Prefab;
@@ -35,13 +35,14 @@ public class SinglePlayerAttack : MonoBehaviour
     private GameObject[] attack5_stored;
     private int index5 = 0;
 
+    private int maxAttackUnlocked = 1;
     private float timer;
 
     private void Start()
     {
       timer = lagTime;
       staminaComp = staminaBar.GetComponent<AttackStamina>();
-      unlockAttack = GetComponent<UnlockAttacks_singleplayer>();
+      anim = GetComponent<Animator>();
 
       attack1_stored = new GameObject[stored_num];
       attack2_stored = new GameObject[stored_num];
@@ -63,9 +64,19 @@ public class SinglePlayerAttack : MonoBehaviour
 
     }
 
+    public void unlockAttack()
+    {
+      maxAttackUnlocked++;
+    }
+
+    public int maxAttack_Unlocked()
+    {
+      return maxAttackUnlocked;
+    }
+
     private void spawn()
     {
-      int chosen = (int) Random.Range(0, 5);
+      int chosen = (int) Random.Range(0, maxAttackUnlocked);
       if (chosen == 0) attack1();
       if (chosen == 1) attack2();
       if (chosen == 2) attack3();
@@ -75,6 +86,7 @@ public class SinglePlayerAttack : MonoBehaviour
 
     private void general_instantiate(int index, GameObject prefab, GameObject[] arr, float bp)
     {
+      anim.SetTrigger("aim");
       if (arr[index] == null)
       {
         arr[index] = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
@@ -98,7 +110,7 @@ public class SinglePlayerAttack : MonoBehaviour
 
     private void attack2()
     {
-      if (staminaComp.canAttack(bp2) && unlockAttack.attack2_locked())
+      if (staminaComp.canAttack(bp2))
       {
         if (index2 >= attack2_stored.Length) index2 = 0;
         general_instantiate(index2, attack1Prefab, attack2_stored, bp2);
@@ -108,17 +120,17 @@ public class SinglePlayerAttack : MonoBehaviour
 
     private void attack3()
     {
-      if (staminaComp.canAttack(bp3) && unlockAttack.attack3_locked())
+      if (staminaComp.canAttack(bp3))
       {
         if (index3 >= attack3_stored.Length) index3 = 0;
-        general_instantiate(index2, attack3Prefab, attack3_stored, bp3);
+        general_instantiate(index3, attack3Prefab, attack3_stored, bp3);
         index3++;
       }
     }
 
     private void attack4()
     {
-      if (staminaComp.canAttack(bp4) && unlockAttack.attack4_locked())
+      if (staminaComp.canAttack(bp4))
       {
         if (index4 >= attack4_stored.Length) index4 = 0;
         general_instantiate(index4, attack4Prefab, attack4_stored, bp4);
@@ -128,7 +140,7 @@ public class SinglePlayerAttack : MonoBehaviour
 
     private void attack5()
     {
-      if (staminaComp.canAttack(bp5) && unlockAttack.attack5_locked())
+      if (staminaComp.canAttack(bp5))
       {
         if (index5 >= attack5_stored.Length) index5 = 0;
         general_instantiate(index5, attack5Prefab, attack5_stored, bp5);
