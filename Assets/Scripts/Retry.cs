@@ -5,11 +5,11 @@ public class Retry : MonoBehaviour
 {
     public void restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Base");
     }
 
     public void returnMain()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
     }
 }

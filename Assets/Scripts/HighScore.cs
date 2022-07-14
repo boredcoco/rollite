@@ -10,6 +10,7 @@ public class HighScore : MonoBehaviour
     public static string lastScoreTxt = "000"; //new addition
 
     public static int timer = 0;
+    private int highscore = 0;
 
     void startTimer()
     {
@@ -31,17 +32,43 @@ public class HighScore : MonoBehaviour
     {
         timer += 1;
         scoreText.text = timer.ToString();
+
+        // save highscore
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Base"))
+        {
+            if (highscore < timer)
+            {
+                PlayerPrefs.SetInt("MP Score", timer);
+            }
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SinglePlayer Base"))
+        {
+            if (highscore < timer)
+            {
+                PlayerPrefs.SetInt("SP Score", timer);
+            }
+        }
+
     }
 
     void Start()
     {
-        //just added
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Retry"))
         {
           scoreText.text = lastScoreTxt;
         } else
         {
-          startTimer(); //this was all that was here originally
+          startTimer(); 
+        }
+
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Base"))
+        {
+            highscore = PlayerPrefs.GetInt("MP Score", 0);
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SinglePlayer Base"))
+        {
+            highscore = PlayerPrefs.GetInt("SP Score", 0);
         }
     }
 
@@ -58,7 +85,7 @@ public class HighScore : MonoBehaviour
             stopTimer();
           }
         }
-        //this clause is a new addition
+   
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Retry"))
         {
           lastScoreTxt = scoreText.text;

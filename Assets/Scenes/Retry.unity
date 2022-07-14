@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 865174243}
   - component: {fileID: 865174242}
   m_Layer: 5
-  m_Name: Return Main
+  m_Name: Main Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 777441584}
         m_TargetAssemblyTypeName: Retry, Assembly-CSharp
-        m_MethodName: restart
+        m_MethodName: returnMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
