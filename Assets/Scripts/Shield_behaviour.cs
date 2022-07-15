@@ -8,6 +8,8 @@ public class Shield_behaviour : MonoBehaviour
     [SerializeField] public float _shieldHealth = 3f;
     private float currentHealth;
 
+    [SerializeField] private AudioSource shieldSound;
+
     private void Start()
     {
       currentHealth = _shieldHealth;
@@ -25,6 +27,7 @@ public class Shield_behaviour : MonoBehaviour
     {
       if (collision.tag == "Player" && player == null)
       {
+        shieldSound.Play();
         player = collision.gameObject;
       }
     }

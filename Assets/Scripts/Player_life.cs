@@ -15,6 +15,9 @@ public class Player_life : MonoBehaviour
     public Sprite hit;
     public float flashTimer;
 
+    [SerializeField] private AudioSource healSound;
+    [SerializeField] private AudioSource getHitSound;
+
     private void Start()
     {
 
@@ -32,6 +35,7 @@ public class Player_life : MonoBehaviour
       if (collision.tag == "Attack" && !basicMovement.isDashing
       && collision.gameObject.GetComponent<Bullet>().isActiveBullet())
       {
+            getHitSound.Play();
             spriteRenderer.sprite = hit;
             Invoke("resetSprite", flashTimer);
         }
@@ -44,6 +48,7 @@ public class Player_life : MonoBehaviour
 
     public void heal(float amount)
     {
+      healSound.Play();
       if (currentHealth + amount > _health)
       {
         currentHealth = _health;

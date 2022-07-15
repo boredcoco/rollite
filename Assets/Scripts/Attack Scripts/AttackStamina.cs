@@ -11,6 +11,8 @@ public class AttackStamina : MonoBehaviour
     [SerializeField] private float _regenStaminaSpeed = 0.1f;
     [SerializeField] private float _maxStamina = 10f;
 
+    [SerializeField] private AudioSource debuffSound;
+
     private float currentStamina;
 
     private void Start()
@@ -37,6 +39,7 @@ public class AttackStamina : MonoBehaviour
 
     public void debuffStamina()
     {
+      debuffSound.Play();
       currentStamina = 0.0f;
     }
 

@@ -20,21 +20,18 @@ public class BasicMovement : MonoBehaviour
     public float currentStamina = 10f;
     public float regenLagTime = 0.1f;
     public float regenSpeed = 0.5f;
-    private Coroutine regen;
 
     private Rigidbody2D plane;
 
     public ScreenBounds screenBounds;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         plane = GetComponent<Rigidbody2D>();
         currentStamina = maxStamina;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         screenWrap(transform.localPosition);
 
@@ -116,14 +113,8 @@ public class BasicMovement : MonoBehaviour
       if (currentStamina > maxStamina) {
         currentStamina = maxStamina;
       }
-      //regen = StartCoroutine(LagTime());
     }
 
-    private IEnumerator LagTime()
-    {
-      yield return new WaitForSeconds(regenLagTime);
-      currentStamina = currentStamina + (regenSpeed) * Time.deltaTime;
-    }
 
     // Screen Wrap
     private void screenWrap(Vector3 tempPosition)

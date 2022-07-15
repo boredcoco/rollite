@@ -42,6 +42,8 @@ public class PortalController : MonoBehaviour
       while (Mathf.Abs(portal1_x - portal2_x) < _distanceBetweenPortals
       || Mathf.Abs(portal1_y - portal2_y) < _distanceBetweenPortals)
       {
+        portal1_x = Random.Range(_lowerX, _upperX);
+        portal1_y = Random.Range(_lowerY, _upperY);
         portal2_x = Random.Range(_lowerX, _upperX);
         portal2_y = Random.Range(_lowerY, _upperY);
       }
