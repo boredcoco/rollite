@@ -23,4 +23,9 @@ public class LevelUp : MonoBehaviour
         timer -= Time.deltaTime;
       }
     }
+
+    private void OnEnable()
+    {
+      timer = popUpTime;
+    }
 }

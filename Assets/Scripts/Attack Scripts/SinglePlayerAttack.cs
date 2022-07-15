@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SinglePlayerAttack : MonoBehaviour
 {
+    [SerializeField] private Transform _player;
     [SerializeField] private int stored_num = 5;
     [SerializeField] private float lagTime = 5f;
 
@@ -76,12 +77,24 @@ public class SinglePlayerAttack : MonoBehaviour
 
     private void spawn()
     {
-      int chosen = (int) Random.Range(0, maxAttackUnlocked);
-      if (chosen == 0) attack1();
-      if (chosen == 1) attack2();
-      if (chosen == 2) attack3();
-      if (chosen == 3) attack4();
-      if (chosen == 4) attack5();
+      if (_player.position.x == transform.position.x && _player.position.y < transform.position.y)
+      {
+        attack1();
+      } else if (Mathf.Abs(_player.position.x - transform.position.x) <= 1 && maxAttackUnlocked >= 3)
+      {
+        attack3();
+      } else if (Mathf.Abs(_player.position.y - transform.position.y) <= 1 && maxAttackUnlocked >= 4)
+      {
+        attack4();
+      } else
+      {
+        int chosen = (int) Random.Range(0, maxAttackUnlocked);
+        if (chosen == 0) attack1();
+        if (chosen == 1) attack2();
+        if (chosen == 2) attack3();
+        if (chosen == 3) attack4();
+        if (chosen == 4) attack5();
+      }
     }
 
     private void general_instantiate(int index, GameObject prefab, GameObject[] arr, float bp)

@@ -10,6 +10,9 @@ public class ExplosionController : MonoBehaviour
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _lagTime = 0.1f;
 
+    [SerializeField] private AudioSource canonSound;
+    private bool playSound = true;
+
     private GameObject[] storedAttack2;
     private int pointer = 0;
     private float timer;
@@ -26,6 +29,11 @@ public class ExplosionController : MonoBehaviour
       {
         if (timer <= 0)
         {
+          if (playSound)
+          {
+            canonSound.Play();
+            playSound = false;
+          }
           if (pointer >= _numOfBullets)
           {
             gameObject.SetActive(false);

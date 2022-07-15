@@ -28,25 +28,25 @@ public class UnlockAttacks_singleplayer : MonoBehaviour
         if (HighScore.timer >= attack2Time && singlepAttack.maxAttack_Unlocked() < 2)
         {
           singlepAttack.unlockAttack();
-          aipath.speed = aipath.speed + ai_speed_increment;
+          aipath.maxSpeed = aipath.maxSpeed + ai_speed_increment;
           levelUp.SetActive(true);
         }
         if (HighScore.timer >= attack3Time && singlepAttack.maxAttack_Unlocked() < 3)
         {
           singlepAttack.unlockAttack();
-          aipath.speed = aipath.speed + ai_speed_increment;
+          aipath.maxSpeed = aipath.maxSpeed + ai_speed_increment;
           levelUp.SetActive(true);
         }
         if (HighScore.timer >= attack4Time && singlepAttack.maxAttack_Unlocked() < 4)
         {
           singlepAttack.unlockAttack();
-          aipath.speed = aipath.speed + ai_speed_increment;
+          aipath.maxSpeed = aipath.maxSpeed + ai_speed_increment;
           levelUp.SetActive(true);
         }
         if (HighScore.timer >= attack5Time && singlepAttack.maxAttack_Unlocked() < 5)
         {
           singlepAttack.unlockAttack();
-          aipath.speed = aipath.speed + ai_speed_increment;
+          aipath.maxSpeed = aipath.maxSpeed + ai_speed_increment;
           levelUp.SetActive(true);
         }
     }

@@ -24,4 +24,5 @@ public class HoriVertiTimer : MonoBehaviour
           timer -= Time.deltaTime;
         }
     }
+
 }

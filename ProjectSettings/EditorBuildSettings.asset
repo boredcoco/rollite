@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 4ced068fc76654049b3883edb599fc69
+  - enabled: 1
+    path: Assets/Scenes/SP Retry.unity
+    guid: 656166251a48ae041a6f2c962cefb33e
   m_configObjects: {}

@@ -11,19 +11,26 @@ public class ObstacleSpawnerScript : MonoBehaviour
     [SerializeField] private float _lowerY = -4f;
     [SerializeField] private float _upperY = 4f;
 
-    private Hashtable obs_positions = new Hashtable();
-    private int obs_number;
+    private bool[,] obs_positions;
 
+    private int obs_number;
     private string orientation = "random";
+    private bool hasObstacle = true;
 
     private void Start()
     {
+        obs_positions = new bool[(int) (_upperX - _lowerX + 1), (int) ( _upperY - _lowerY + 1)];
+
         obs_number = MapSettings.obsNum;
         orientation = MapSettings.obs_orientation;
+        hasObstacle = MapSettings.have_obstacles;
 
-        if (orientation == "random") generateRandom(obs_number);
-        if (orientation == "horizontal") generateHori(obs_number);
-        if (orientation == "vertical") generateVerti(obs_number);
+        if (hasObstacle)
+        {
+          if (orientation == "random") generateRandom(obs_number);
+          if (orientation == "horizontal") generateHori(obs_number);
+          if (orientation == "vertical") generateVerti(obs_number);
+        }
     }
 
     private void generateRandom(int n)
@@ -34,8 +41,10 @@ public class ObstacleSpawnerScript : MonoBehaviour
         int y = (int) Random.Range(_lowerY, _upperY);
 
         Vector2 coords = new Vector2(x, y);
-        if (!obs_positions.Contains(coords)) obs_positions.Add(coords, true);
-
+        if (!obs_positions[x - (int) _lowerX, y - (int) _lowerY])
+        {
+          obs_positions[x - (int) _lowerX, y - (int) _lowerY] = true;
+        }
         Instantiate(prefab, (Vector3) coords, Quaternion.identity);
       }
     }
@@ -48,7 +57,10 @@ public class ObstacleSpawnerScript : MonoBehaviour
         int x = i;
 
         Vector2 coords = new Vector2(x, y);
-        if (!obs_positions.Contains(coords)) obs_positions.Add(coords, true);
+        if (!obs_positions[x - (int) _lowerX, y - (int) _lowerY])
+        {
+          obs_positions[x - (int) _lowerX, y - (int) _lowerY] = true;
+        }
 
         Instantiate(prefab, (Vector3) coords, Quaternion.identity);
       }
@@ -62,7 +74,10 @@ public class ObstacleSpawnerScript : MonoBehaviour
         int y = i;
 
         Vector2 coords = new Vector2(x, y);
-        if (!obs_positions.Contains(coords)) obs_positions.Add(coords, true);
+        if (!obs_positions[x - (int) _lowerX, y - (int) _lowerY])
+        {
+          obs_positions[x - (int) _lowerX, y - (int) _lowerY] = true;
+        }
 
         Instantiate(prefab, (Vector3) coords, Quaternion.identity);
       }
@@ -70,7 +85,7 @@ public class ObstacleSpawnerScript : MonoBehaviour
 
     public bool isObstacle(int x, int y)
     {
-      return obs_positions.Contains(new Vector2(x, y));
+      return obs_positions[x - (int) _lowerX, y - (int) _lowerY];
     }
 
 
