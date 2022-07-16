@@ -861,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36fefc3c0073465bbd99fca2609e7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  about: 1
 --- !u!114 &678886458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,6 +2027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36fefc3c0073465bbd99fca2609e7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  about: 2
 --- !u!114 &1172541164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2309,6 +2311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36fefc3c0073465bbd99fca2609e7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  about: 3
 --- !u!114 &1226532001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,7 +2332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Obstacles off:'
+  m_text: 'Obstacles:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
