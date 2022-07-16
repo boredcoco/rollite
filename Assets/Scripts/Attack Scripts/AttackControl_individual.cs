@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AttackControl_individual : MonoBehaviour
 {
+
+    public GameObject quitPopUp;
+
     [SerializeField] private GameObject _attackStamina;
     [SerializeField] private GameObject _attack;
 
@@ -27,7 +30,7 @@ public class AttackControl_individual : MonoBehaviour
 
     private void Update()
     {
-      if (selected == true && Input.GetMouseButtonDown(0))
+      if (selected == true && Input.GetMouseButtonDown(0) && !quitPopUp.activeSelf)
       {
         fireBullet();
       }

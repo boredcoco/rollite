@@ -541,6 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 1843387448322260854, guid: f4dab8fdb3ea840e7ac3935de4698ed0, type: 3}
   _numOfObjects: 5
@@ -2922,6 +2923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 5849212351057219570, guid: 07386548f84c6467cbd3f87d07e96834, type: 3}
   _numOfObjects: 5
@@ -3497,6 +3499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 1008570411544772975, guid: 2e127be25149d490c9a7675b95d69fa8, type: 3}
   _numOfObjects: 5
@@ -3531,6 +3534,7 @@ GameObject:
   - component: {fileID: 1558027656}
   - component: {fileID: 1558027659}
   - component: {fileID: 1558027660}
+  - component: {fileID: 1558027661}
   m_Layer: 5
   m_Name: Attack 1
   m_TagString: Untagged
@@ -3665,6 +3669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 6607601851990326454, guid: c9817d89c056142c3bd8d66c039a9eaa, type: 3}
   _numOfObjects: 5
@@ -3673,6 +3678,19 @@ MonoBehaviour:
   _upperX: 10
   _lowerY: -5
   _upperY: 5
+--- !u!114 &1558027661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558027653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unlockScore: 0
 --- !u!1 &1625006348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5004,6 +5022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62679069e95aa43e2bb2434626766e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _attack: {fileID: 2782344125651186781, guid: 859f14eaa52f941e59c179353082618e, type: 3}
   _numOfObjects: 5
