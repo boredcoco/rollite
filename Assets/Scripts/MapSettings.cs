@@ -24,7 +24,8 @@ public class MapSettings : MonoBehaviour
     {
       horizontal.enabled = false;
       vertical.enabled = false;
-      noObstacle_image.color = new Color32(45, 124, 66, 100);
+      if (have_obstacles) noObstacle_image.color = new Color32(45, 124, 66, 100);
+      else noObstacle_image.color = Color.white;
     }
 
     public void changeNumOfObstacles(int i)
