@@ -5,6 +5,11 @@ using UnityEngine.Audio;
 
 public class SettingsManager : MonoBehaviour
 {
+    [SerializeField] private Slider bgmSlider;
+    [SerializeField] private Slider sfxSlider;
+    private static float bgm_val = 0.5f;
+    private static float sfx_val = 0.5f;
+
     public static int BGMNum = 1;
     public static Color firstColour = new Color(0.6992524f, 0.8516356f, 0.8679245f, 1);
     public static Color secondColour = new Color(0.8784314f, 0.4980392f, 0.6039216f, 1);
@@ -17,6 +22,12 @@ public class SettingsManager : MonoBehaviour
     public Image plane;
 
     public AudioMixer audioMixer;
+
+    private void Start()
+    {
+      bgmSlider.value = bgm_val;
+      sfxSlider.value = sfx_val;
+    }
 
     public void colourOne()
     {
@@ -57,9 +68,16 @@ public class SettingsManager : MonoBehaviour
         BasicMovement.dashForce = 20f;
     }
 
-    public void setVolume(float vol)
+    public void setVolume_bgm(float vol)
     {
-        audioMixer.SetFloat("MasterVolume", 30f * Mathf.Log10(vol));
+        bgm_val = bgmSlider.value;
+        audioMixer.SetFloat("BGM", 30f * Mathf.Log10(bgm_val));
+    }
+
+    public void setVolume_sfx(float vol)
+    {
+      sfx_val = sfxSlider.value;
+      audioMixer.SetFloat("Sound Effects", 30f * Mathf.Log10(sfx_val));
     }
 
     void Update()
