@@ -11,28 +11,33 @@ public class Quit : MonoBehaviour
 
     public void yesQuit()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
         quitting = false;
+        Time.timeScale = 1;
     }
 
     public void noQuit()
     {
         quitPopUp.SetActive(false);
         quitting = false;
+        Time.timeScale = 1;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+
             if (quitting)
             {
                 quitting = false;
                 quitPopUp.SetActive(false);
+                Time.timeScale = 1;
             } else
             {
                 quitting = true;
                 quitPopUp.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
