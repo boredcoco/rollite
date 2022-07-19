@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Electronic Highway Sign SDF
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   hashCode: 1023178945
   material: {fileID: 2140032}
   materialHashCode: 225402433
@@ -194,7 +194,7 @@ MonoBehaviour:
   fallbackFontAssets: []
   m_FallbackFontAssetTable: []
   m_CreationSettings:
-    sourceFontFileName: 
+    sourceFontFileName:
     sourceFontFileGUID: 8a2b9e2a607dd2143b58c44bc32410b4
     pointSizeSamplingMode: 1
     pointSize: 144
@@ -203,9 +203,9 @@ MonoBehaviour:
     atlasWidth: 1024
     atlasHeight: 1024
     characterSetSelectionMode: 6
-    characterSequence: 
+    characterSequence:
     referencedFontAssetGUID: 8f586378b4e144a9851e7b34d9b748ee
-    referencedTextAssetGUID: 
+    referencedTextAssetGUID:
     fontStyle: 0
     fontStyleModifier: 0
     renderMode: 4165
@@ -297,11 +297,11 @@ Texture2D:
     m_WrapW: 0
   m_LightmapFormat: 0
   m_ColorSpace: 0
-  m_PlatformBlob: 
+  m_PlatformBlob:
   image data: 0
-  _typelessdata: 
+  _typelessdata:
   m_StreamData:
     serializedVersion: 2
     offset: 0
     size: 0
-    path: 
+    path:

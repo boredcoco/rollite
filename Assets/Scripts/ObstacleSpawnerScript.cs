@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class ObstacleSpawnerScript : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class ObstacleSpawnerScript : MonoBehaviour
           if (orientation == "horizontal") generateHori(obs_number);
           if (orientation == "vertical") generateVerti(obs_number);
         }
+        AstarPath.active.Scan();
     }
 
     private void generateRandom(int n)
