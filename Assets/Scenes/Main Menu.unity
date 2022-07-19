@@ -133,9 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 45294349}
   - component: {fileID: 45294348}
+  - component: {fileID: 45294350}
   m_Layer: 0
   m_Name: BG Music
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,6 +252,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &45294350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45294347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc02c89ec46a41059744c3bd8167ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &87275606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd5adcb46e9b2148bb38863f3675ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultBGM: {fileID: 45294347}
   singleplayerScore: {fileID: 2064736361}
   multiplayerScore: {fileID: 395150448}
 --- !u!1 &814170824
