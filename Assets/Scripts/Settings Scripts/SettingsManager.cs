@@ -7,8 +7,16 @@ public class SettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
+<<<<<<< Updated upstream
     private static float bgm_val = 1f;
     private static float sfx_val = 1f;
+=======
+<<<<<<< Updated upstream
+    private static float bgm_val = 0.5f;
+    private static float sfx_val = 0.5f;
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
     public static int BGMNum = 1;
     public static Color firstColour = new Color(0.6992524f, 0.8516356f, 0.8679245f, 1);
@@ -25,8 +33,8 @@ public class SettingsManager : MonoBehaviour
 
     private void Start()
     {
-      bgmSlider.value = bgm_val;
-      sfxSlider.value = sfx_val;
+      bgmSlider.value = PlayerPrefs.GetFloat("BGMvol", 1f);
+      sfxSlider.value = PlayerPrefs.GetFloat("SFXvol", 1f);
     }
 
     public void colourOne()
@@ -68,16 +76,16 @@ public class SettingsManager : MonoBehaviour
         BasicMovement.dashForce = 20f;
     }
 
-    public void setVolume_bgm(float vol)
+    public void setVolume_bgm()
     {
-        bgm_val = bgmSlider.value;
-        audioMixer.SetFloat("BGM", 30f * Mathf.Log10(bgm_val));
+        PlayerPrefs.SetFloat("BGMvol", bgmSlider.value);
+        audioMixer.SetFloat("BGM", 30f * Mathf.Log10(PlayerPrefs.GetFloat("BGMvol")));
     }
 
-    public void setVolume_sfx(float vol)
+    public void setVolume_sfx()
     {
-      sfx_val = sfxSlider.value;
-      audioMixer.SetFloat("Sound Effects", 30f * Mathf.Log10(sfx_val));
+      PlayerPrefs.SetFloat("SFXvol", sfxSlider.value);
+      audioMixer.SetFloat("Sound Effects", 30f * Mathf.Log10(PlayerPrefs.GetFloat("SFXvol")));
     }
 
     void Update()
