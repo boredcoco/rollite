@@ -140,8 +140,6 @@ GameObject:
   - component: {fileID: 84143751}
   - component: {fileID: 84143752}
   - component: {fileID: 84143754}
-  - component: {fileID: 84143755}
-  - component: {fileID: 84143756}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -187,9 +185,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1722868759
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 31606b7ce75bd46dda9c7b48f50b3b9c, type: 3}
   m_Color: {r: 1, g: 0, b: 0.45411825, a: 1}
   m_FlipX: 0
@@ -256,7 +254,7 @@ MonoBehaviour:
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
+  whenCloseToDestination: 1
   constrainInsideGraph: 0
 --- !u!114 &84143745
 MonoBehaviour:
@@ -376,43 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3024ae7516f4340cba6b693f793c92aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &84143755
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84143741}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.021217663, y: 0.06365299}
-  serializedVersion: 2
-  m_Radius: 1.0678244
---- !u!50 &84143756
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84143741}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &107680835
 GameObject:
   m_ObjectHideFlags: 0
