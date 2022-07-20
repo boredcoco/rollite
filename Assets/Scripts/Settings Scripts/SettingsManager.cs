@@ -7,16 +7,7 @@ public class SettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
-<<<<<<< Updated upstream
-    private static float bgm_val = 1f;
-    private static float sfx_val = 1f;
-=======
-<<<<<<< Updated upstream
-    private static float bgm_val = 0.5f;
-    private static float sfx_val = 0.5f;
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+
 
     public static int BGMNum = 1;
     public static Color firstColour = new Color(0.6992524f, 0.8516356f, 0.8679245f, 1);
