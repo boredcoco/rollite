@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] public float basePower = 1f;
+    [SerializeField] private float basePower = 1f;
 
     [SerializeField] private float _lowerX = -7f;
     [SerializeField] private float _upperX = 10f;

@@ -8,7 +8,7 @@ public class MapSettings : MonoBehaviour
 {
     public static int obsNum = 3;
     public static bool have_obstacles = true;
-    public static string obs_orientation = "random";
+    public static string obs_orientation = "Random";
 
     [SerializeField] private Image horizontal;
     [SerializeField] private Image vertical;

@@ -86,4 +86,5 @@ public class SettingsManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
 }
