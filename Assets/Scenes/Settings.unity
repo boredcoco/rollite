@@ -715,6 +715,8 @@ MonoBehaviour:
   buttonOne: {fileID: 1815021175}
   buttonTwo: {fileID: 1104317804}
   buttonThree: {fileID: 809230720}
+  currButton: 1
+  setting: colour
 --- !u!1 &462804657
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,11 +883,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1453170220}
         m_TargetAssemblyTypeName: ButtonSelect, Assembly-CSharp
         m_MethodName: buttonSelected
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 713847105}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -910,7 +912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6c1088785b78f84eabe0f122275c207, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b29b6f3b8308b6a4c9a15608f9a850db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1111,11 +1113,11 @@ MonoBehaviour:
       - m_Target: {fileID: 357355097}
         m_TargetAssemblyTypeName: ButtonSelect, Assembly-CSharp
         m_MethodName: buttonSelected
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 809230720}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1436,11 +1438,11 @@ MonoBehaviour:
       - m_Target: {fileID: 357355097}
         m_TargetAssemblyTypeName: ButtonSelect, Assembly-CSharp
         m_MethodName: buttonSelected
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1104317804}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1987,11 +1989,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1453170220}
         m_TargetAssemblyTypeName: ButtonSelect, Assembly-CSharp
         m_MethodName: buttonSelected
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1437210695}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2190,6 +2192,8 @@ MonoBehaviour:
   buttonOne: {fileID: 1437210695}
   buttonTwo: {fileID: 713847105}
   buttonThree: {fileID: 1916759847}
+  currButton: 2
+  setting: speed
 --- !u!1 &1456955736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,11 +3392,11 @@ MonoBehaviour:
       - m_Target: {fileID: 357355097}
         m_TargetAssemblyTypeName: ButtonSelect, Assembly-CSharp
         m_MethodName: buttonSelected
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1815021175}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3417,7 +3421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6c1088785b78f84eabe0f122275c207, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b29b6f3b8308b6a4c9a15608f9a850db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3674,11 +3678,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1453170220}
         m_TargetAssemblyTypeName: ButtonSelect, Assembly-CSharp
         m_MethodName: buttonSelected
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1916759847}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
