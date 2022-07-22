@@ -10,13 +10,14 @@ public class SettingsManager : MonoBehaviour
 
 
     public static int BGMNum = 1;
-    public static Color firstColour = new Color(0.6992524f, 0.8516356f, 0.8679245f, 1);
-    public static Color secondColour = new Color(0.8784314f, 0.4980392f, 0.6039216f, 1);
-    public static Color thirdColour = new Color(0.1960784f, 0.1921569f, 0.4666667f, 1);
 
-    public Sprite bluePlane;
-    public Sprite pinkPlane;
-    public Sprite purplePlane;
+    [SerializeField] public static Color firstColour = new Color(0.6992524f, 0.8516356f, 0.8679245f, 1);
+    [SerializeField] public static Color secondColour = new Color(0.8784314f, 0.4980392f, 0.6039216f, 1);
+    [SerializeField] public static Color thirdColour = new Color(0.1960784f, 0.1921569f, 0.4666667f, 1);
+
+    [SerializeField] private Sprite bluePlane;
+    [SerializeField] private Sprite pinkPlane;
+    [SerializeField] private Sprite purplePlane;
 
     public Image plane;
 
