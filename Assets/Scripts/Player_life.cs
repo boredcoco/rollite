@@ -15,6 +15,8 @@ public class Player_life : MonoBehaviour
     public Sprite hit;
     public float flashTimer;
 
+    private bool hasShield = false;
+
     [SerializeField] private AudioSource healSound;
     [SerializeField] private AudioSource getHitSound;
 
@@ -27,18 +29,6 @@ public class Player_life : MonoBehaviour
       basicMovement = paperPlane.GetComponent<BasicMovement>();
 
       normal = PlaneColour.defaultColour;
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-      if (collision.tag == "Attack" && !basicMovement.isDashing
-      && collision.gameObject.GetComponent<Bullet>().isActiveBullet())
-      {
-            getHitSound.Play();
-            spriteRenderer.sprite = hit;
-            Invoke("resetSprite", flashTimer);
-        }
     }
 
     private void resetSprite()
@@ -59,10 +49,18 @@ public class Player_life : MonoBehaviour
       Debug.Log(currentHealth);
     }
 
+    private void takeDamageAnimation()
+    {
+      getHitSound.Play();
+      spriteRenderer.sprite = hit;
+      Invoke("resetSprite", flashTimer);
+    }
+
     public void loseHealth(float amount)
     {
         if (!basicMovement.isDashing)
         {
+          takeDamageAnimation();
             if (currentHealth - amount <= 0)
             {
                 if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Base"))
@@ -86,6 +84,21 @@ public class Player_life : MonoBehaviour
     public float getHealth()
     {
       return currentHealth / _health;
+    }
+
+    public void activateShield()
+    {
+      hasShield = true;
+    }
+
+    public void deactivateShield()
+    {
+      hasShield = false;
+    }
+
+    public bool hasActiveShield()
+    {
+      return hasShield;
     }
 
 }
