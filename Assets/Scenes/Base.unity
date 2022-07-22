@@ -3501,7 +3501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 643820854336338667, guid: 4a6feb6549d1e4b3aa4f96f9c994f637, type: 3}
       propertyPath: flashTimer
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 643820854336338670, guid: 4a6feb6549d1e4b3aa4f96f9c994f637, type: 3}
       propertyPath: m_Enabled

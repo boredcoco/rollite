@@ -370,7 +370,7 @@ MonoBehaviour:
   _health: 10
   spriteRenderer: {fileID: 643820854336338662}
   hit: {fileID: 21300000, guid: 023bc51f8aaece747a00d2dbb5e18d78, type: 3}
-  flashTimer: 0.2
+  flashTimer: 0.4
   healSound: {fileID: 3099603990771491198}
   getHitSound: {fileID: 2126552942783639977}
 --- !u!95 &643820854336338670
