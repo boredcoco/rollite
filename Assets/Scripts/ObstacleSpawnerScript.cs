@@ -28,9 +28,9 @@ public class ObstacleSpawnerScript : MonoBehaviour
 
         if (hasObstacle)
         {
-          if (orientation == "random") generateRandom(obs_number);
-          if (orientation == "horizontal") generateHori(obs_number);
-          if (orientation == "vertical") generateVerti(obs_number);
+          if (orientation == "Random") generateRandom(obs_number);
+          if (orientation == "Horizontal") generateHori(obs_number);
+          if (orientation == "Vertical") generateVerti(obs_number);
         }
         AstarPath.active.Scan();
     }
