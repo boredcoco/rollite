@@ -27,10 +27,13 @@ public class Images : MonoBehaviour
       if (index < allImages.Length - 1)
       {
         index++;
-        currentImg.enabled = false;
-        currentImg = allImages[index];
-        currentImg.enabled = true;
+      } else
+      {
+        index = 0;
       }
+      currentImg.enabled = false;
+      currentImg = allImages[index];
+      currentImg.enabled = true;
     }
 
     public void back()
@@ -38,9 +41,12 @@ public class Images : MonoBehaviour
       if (index != 0)
       {
         index--;
-        currentImg.enabled = false;
-        currentImg = allImages[index];
-        currentImg.enabled = true;
+      } else
+      {
+        index = allImages.Length - 1;
       }
+      currentImg.enabled = false;
+      currentImg = allImages[index];
+      currentImg.enabled = true;
     }
 }

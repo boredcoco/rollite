@@ -1487,7 +1487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1410308e8b06a40e582004ac371d49c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: Use WASD keys to Move Plane
+  movement: Use WASD keys to Move Plane around. If you go out of the screen boundaries,
+    you will be transported to the other boundary of the playing field. Try going
+    to the edges of the screen.
   dashing: Dodge attacks launched at you, or press the 'space' key to dash through
     attacks. Remember that dahsing depletes Player Stamina, which will regenerate
     over time.
