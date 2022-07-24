@@ -8,9 +8,8 @@ public class AttackControl_individual : MonoBehaviour
     public GameObject quitPopUp;
 
     [SerializeField] private GameObject _attackStamina;
-    [SerializeField] private GameObject _attack;
 
-    [SerializeField] private int _numOfObjects = 5;
+    [SerializeField] private string _tagToFind = "Attack";
     [SerializeField] private float basePower = 1f;
 
     [SerializeField] private float _lowerX = -7f;
@@ -25,7 +24,11 @@ public class AttackControl_individual : MonoBehaviour
 
     private void Start()
     {
-      reusableObjects = new GameObject[_numOfObjects];
+      reusableObjects = GameObject.FindGameObjectsWithTag(_tagToFind);
+      for (int i = 0; i < reusableObjects.Length; i++)
+      {
+        reusableObjects[i].SetActive(false);
+      }
     }
 
     private void Update()
@@ -49,7 +52,7 @@ public class AttackControl_individual : MonoBehaviour
       Vector3 coords = Camera.main.ScreenToWorldPoint(new Vector3(x, y, transform.position.z));
       coords.z = 0;
 
-      if (index >= _numOfObjects) {
+      if (index >= reusableObjects.Length) {
         index = 0;
       }
 
@@ -57,10 +60,7 @@ public class AttackControl_individual : MonoBehaviour
       if (coords.x >= _lowerX && coords.x <= _upperX && coords.y >= _lowerY && coords.y <= _upperY
       && _attackStamina.GetComponent<AttackStamina>().canAttack(basePower))
       {
-        if (reusableObjects[index] == null) {
-          reusableObjects[index] = Instantiate(_attack, coords, Quaternion.identity) as GameObject;
-          _attackStamina.GetComponent<AttackStamina>().depleteStamina(basePower);
-        } else if (!reusableObjects[index].activeSelf) {
+        if (!reusableObjects[index].activeSelf) {
           reusableObjects[index].gameObject.SetActive(true);
           reusableObjects[index].gameObject.transform.position = coords;
           _attackStamina.GetComponent<AttackStamina>().depleteStamina(basePower);

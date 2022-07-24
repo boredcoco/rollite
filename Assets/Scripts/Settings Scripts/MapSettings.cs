@@ -20,55 +20,113 @@ public class MapSettings : MonoBehaviour
     [SerializeField] private Description orientation_desc;
     [SerializeField] private Description haveObs_desc;
 
+    [SerializeField] private Sprite selected;
+    [SerializeField] private Sprite unselected;
+
+    [SerializeField] private Button num1;
+    [SerializeField] private Button num2;
+    [SerializeField] private Button num3;
+    [SerializeField] private Button ori1;
+    [SerializeField] private Button ori2;
+    [SerializeField] private Button ori3;
+
+
     private void Start()
     {
-      horizontal.enabled = false;
-      vertical.enabled = false;
+        obsNum = PlayerPrefs.GetInt("obstacles", 3);
+        changeNumOfObstacles(obsNum);
+
+        obs_orientation = PlayerPrefs.GetString("orientation", "Random");
+        changeOrientation(obs_orientation);
+
+        if (PlayerPrefs.GetString("haveObstacles", "Yes") == "Yes")
+        {
+            have_obstacles = false;
+        } else
+        {
+            have_obstacles = true;
+        }
+        toggleObstacles();
     }
 
     public void changeNumOfObstacles(int i)
     {
-      obsNum = i;
-      numOfObs_desc.changeSomething(i.ToString());
+        obsNum = i;
+        PlayerPrefs.SetInt("obstacles", i);
+        numOfObs_desc.changeSomething(obsNum.ToString());
+
+        num1.image.sprite = unselected;
+        num2.image.sprite = unselected;
+        num3.image.sprite = unselected;
+
+
+        if (i == 1)
+        {
+            num1.image.sprite = selected;
+        }
+        else if (i == 3)
+        {
+            num2.image.sprite = selected;
+        }
+        else
+        {
+            num3.image.sprite = selected;
+        }
     }
 
     public void changeOrientation(string ori)
     {
-      obs_orientation = ori;
+        obs_orientation = ori;
+        PlayerPrefs.SetString("orientation", ori);
 
-      if (ori == "horizontal")
-      {
-        vertical.enabled = false;
-        random.enabled = false;
-        horizontal.enabled = true;
-      }
-      if (ori == "vertical")
-      {
-        random.enabled = false;
-        horizontal.enabled = false;
-        vertical.enabled = true;
-      }
-      if (ori == "random")
-      {
-        horizontal.enabled = false;
-        vertical.enabled = false;
-        random.enabled = true;
-      }
-      orientation_desc.changeSomething(ori);
+        ori1.image.sprite = unselected;
+        ori2.image.sprite = unselected;
+        ori3.image.sprite = unselected;
+
+        if (ori == "Horizontal")
+        {
+            vertical.enabled = false;
+            random.enabled = false;
+            horizontal.enabled = true;
+
+            ori1.image.sprite = selected;
+        }
+        if (ori == "Vertical")
+        {
+            random.enabled = false;
+            horizontal.enabled = false;
+            vertical.enabled = true;
+
+            ori2.image.sprite = selected;
+        }
+        if (ori == "Random")
+        {
+            horizontal.enabled = false;
+            vertical.enabled = false;
+            random.enabled = true;
+
+            ori3.image.sprite = selected;
+        }
+
+        orientation_desc.changeSomething(ori);
     }
 
-    public void obstaclePresent()
+    public void toggleObstacles()
     {
-      have_obstacles = !have_obstacles;
-      if (have_obstacles)
-      {
-        haveObs_desc.changeSomething("Yes");
-      }
-      else
-      {
-        haveObs_desc.changeSomething("No");
-      }
+        have_obstacles = !have_obstacles;
 
+        if (have_obstacles)
+        {
+            PlayerPrefs.SetString("haveObstacles", "Yes");
+            haveObs_desc.changeSomething("Yes");
+            noObstacle_image.sprite = unselected;
+        }
+        else
+        {
+            PlayerPrefs.SetString("haveObstacles", "No");
+            haveObs_desc.changeSomething("No");
+            noObstacle_image.sprite = selected;
+        }
     }
 
     private void Update()

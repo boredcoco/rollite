@@ -11,6 +11,10 @@ TagManager:
   - Settings
   - Attack Stamina
   - Music
+  - BulletController
+  - HoriController
+  - VertiController
+  - RandomExplosionController
   layers:
   - Default
   - TransparentFX

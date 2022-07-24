@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1008570411544773011}
   m_Layer: 0
   m_Name: Vertical Attack Control
-  m_TagString: Untagged
+  m_TagString: VertiController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

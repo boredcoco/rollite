@@ -27,18 +27,23 @@ public class Quit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            askIfQuit();
+        }
+    }
 
-            if (quitting)
-            {
-                quitting = false;
-                quitPopUp.SetActive(false);
-                Time.timeScale = 1;
-            } else
-            {
-                quitting = true;
-                quitPopUp.SetActive(true);
-                Time.timeScale = 0;
-            }
+    public void askIfQuit()
+    {
+        if (quitting)
+        {
+            quitting = false;
+            quitPopUp.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            quitting = true;
+            quitPopUp.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
