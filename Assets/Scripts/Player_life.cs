@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player_life : MonoBehaviour
+public class Player_life : MonoBehaviour, Health
 {
 
     [SerializeField] private float _health = 10f;
@@ -96,9 +96,14 @@ public class Player_life : MonoBehaviour
       hasShield = false;
     }
 
-    public bool hasActiveShield()
+    public bool isActiveShield()
     {
       return hasShield;
+    }
+
+    public bool isDashing()
+    {
+      return basicMovement.isDashing;
     }
 
 }

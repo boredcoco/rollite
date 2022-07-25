@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield_behaviour : MonoBehaviour
+public class Shield_behaviour : MonoBehaviour, Health
 {
     private GameObject player;
     [SerializeField] public float _shieldHealth = 3f;
@@ -26,7 +26,7 @@ public class Shield_behaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
       if (collision.tag == "Player" && player == null
-      && !collision.GetComponent<Player_life>().hasActiveShield())
+      && !collision.GetComponent<Player_life>().isActiveShield())
       {
         collision.GetComponent<Player_life>().activateShield();
         shieldSound.Play();
