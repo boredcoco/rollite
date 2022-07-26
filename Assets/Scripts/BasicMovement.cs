@@ -73,7 +73,7 @@ public class BasicMovement : MonoBehaviour
 
             if (isDashing)
             {
-
+                transform.localScale = new Vector3(0.03f, 0.03f, 1f);
                 if (Vdirection != 0)
                 {
                     plane.velocity = new Vector2(plane.velocity.x, Vdirection * dashForce);
@@ -91,6 +91,11 @@ public class BasicMovement : MonoBehaviour
                 {
                     isDashing = false;
                 }
+            }
+
+            if (!isDashing)
+            {
+              transform.localScale = new Vector3(0.05f, 0.05f, 1f);
             }
 
             useStamina();

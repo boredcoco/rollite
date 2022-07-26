@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class DontDestroyMusic : MonoBehaviour
 {
-    [SerializeField] private AudioSource mainMenu_bgm;
+    [SerializeField] private AudioSource mainMenuBgm;
     [SerializeField] private AudioSource littleEngine;
     [SerializeField] private AudioSource glitchBot;
     [SerializeField] private AudioSource spaceVoyager;
     [SerializeField] private AudioSource coldPlanet;
 
     private AudioSource current;
+
+    [SerializeField] private AudioMixer audioMixer;
 
     private void Awake()
     {
@@ -23,6 +26,11 @@ public class DontDestroyMusic : MonoBehaviour
       {
         DontDestroyOnLoad(this.gameObject);
       }
+    }
+
+    private void Start()
+    {
+      audioMixer.SetFloat("BGM", 30f * Mathf.Log10(PlayerPrefs.GetFloat("BGMvol", 0.5f)));
     }
 
     private void Update()
@@ -43,12 +51,12 @@ public class DontDestroyMusic : MonoBehaviour
       {
         if (current == null)
         {
-          current = mainMenu_bgm;
+          current = mainMenuBgm;
           current.Play();
-        } else if (current != mainMenu_bgm)
+        } else if (current != mainMenuBgm)
         {
           current.Stop();
-          current = mainMenu_bgm;
+          current = mainMenuBgm;
           current.Play();
         }
       } else if (SceneManager.GetActiveScene().name == "SP Retry"
