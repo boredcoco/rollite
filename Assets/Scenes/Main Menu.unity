@@ -1480,6 +1480,7 @@ GameObject:
   - component: {fileID: 777441581}
   - component: {fileID: 777441580}
   - component: {fileID: 777441584}
+  - component: {fileID: 777441585}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1589,6 +1590,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleplayerScore: {fileID: 2064736361}
   multiplayerScore: {fileID: 395150448}
+--- !u!114 &777441585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777441579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dbe97c22f8baa478cd148c16195f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bluePlane: {fileID: 21300000, guid: 33b4ec3d68d2888409be82d410ccc289, type: 3}
+  pinkPlane: {fileID: 21300000, guid: cd380748d110c6241a6b5b969b674433, type: 3}
+  purplePlane: {fileID: 21300000, guid: 690b9e24d540e3a4d84bc3f7de7b114a, type: 3}
+  audioMixer: {fileID: 24100000, guid: 83cd0d57a3b3e4c5f909f5e4bf8f2c74, type: 2}
 --- !u!1 &814170824
 GameObject:
   m_ObjectHideFlags: 0
