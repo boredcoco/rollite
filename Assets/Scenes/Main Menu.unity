@@ -268,11 +268,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc02c89ec46a41059744c3bd8167ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu_bgm: {fileID: 45294348}
+  mainMenuBgm: {fileID: 45294348}
   littleEngine: {fileID: 45294354}
   glitchBot: {fileID: 45294353}
   spaceVoyager: {fileID: 45294352}
   coldPlanet: {fileID: 45294351}
+  audioMixer: {fileID: 24100000, guid: 83cd0d57a3b3e4c5f909f5e4bf8f2c74, type: 2}
 --- !u!82 &45294351
 AudioSource:
   m_ObjectHideFlags: 0

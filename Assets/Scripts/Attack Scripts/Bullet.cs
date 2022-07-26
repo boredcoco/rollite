@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
     {
       if (collision.tag == "Player" && timer <= 0)
       {
-        Health hInterface = collision.GetComponent<Player_life>();
+        Health hInterface = collision.GetComponent<Health>();
         bool activeShield = hInterface.isActiveShield();
         bool dashing = hInterface.isDashing();
         if (!activeShield && !dashing)
@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
         }
       } else if (collision.tag == "Shield" && timer <= 0)
       {
-        Health hInterface = collision.GetComponent<Shield_behaviour>();
+        Health hInterface = collision.GetComponent<Health>();
         bool activeShield = hInterface.isActiveShield();
         bool dashing = hInterface.isDashing();
         if (activeShield && !dashing) {
