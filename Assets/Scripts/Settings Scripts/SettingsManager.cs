@@ -25,8 +25,8 @@ public class SettingsManager : MonoBehaviour
 
     private void Start()
     {
-      bgmSlider.value = PlayerPrefs.GetFloat("BGMvol", 1f);
-      sfxSlider.value = PlayerPrefs.GetFloat("SFXvol", 1f);
+      bgmSlider.value = PlayerPrefs.GetFloat("BGMvol", 0.5f);
+      sfxSlider.value = PlayerPrefs.GetFloat("SFXvol", 0.5f);
     }
 
     public void colourOne()
