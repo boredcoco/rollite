@@ -12,8 +12,9 @@ public class PlaneColour : MonoBehaviour
     public Sprite purplePlane;
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
+        /*
         //Set Colour
         if (BGColour.background == SettingsManager.firstColour)
         {
@@ -30,6 +31,16 @@ public class PlaneColour : MonoBehaviour
         {
             defaultColour = purplePlane;
             spriteRenderer.sprite = purplePlane;
+        }
+        */
+
+        if (defaultColour != null)
+        {
+            spriteRenderer.sprite = defaultColour;
+        } else
+        {
+            defaultColour = bluePlane;
+            spriteRenderer.sprite = bluePlane;
         }
     }
 }

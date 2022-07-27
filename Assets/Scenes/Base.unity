@@ -3320,7 +3320,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: BulletController
-  basePower: 5
+  basePower: 8
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -4061,7 +4061,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: VertiController
-  basePower: 3
+  basePower: 5
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -4230,7 +4230,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: Attack
-  basePower: 1
+  basePower: 3
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -6370,7 +6370,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: HoriController
-  basePower: 3
+  basePower: 5
   _lowerX: -7
   _upperX: 10
   _lowerY: -5

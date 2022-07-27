@@ -11,10 +11,6 @@ public class SettingsManager : MonoBehaviour
 
     public static int BGMNum = 1;
 
-    [SerializeField] public static Color firstColour = new Color(0.6992524f, 0.8516356f, 0.8679245f, 1);
-    [SerializeField] public static Color secondColour = new Color(0.8784314f, 0.4980392f, 0.6039216f, 1);
-    [SerializeField] public static Color thirdColour = new Color(0.1960784f, 0.1921569f, 0.4666667f, 1);
-
     [SerializeField] private Sprite bluePlane;
     [SerializeField] private Sprite pinkPlane;
     [SerializeField] private Sprite purplePlane;
@@ -31,22 +27,25 @@ public class SettingsManager : MonoBehaviour
 
     public void colourOne()
     {
-        BGColour.background = firstColour;
+        BGColour.background = Setup.firstColour;
         plane.sprite = bluePlane;
+        PlaneColour.defaultColour = bluePlane;
         BGMNum = 1;
     }
 
     public void colourTwo()
     {
-        BGColour.background = secondColour;
+        BGColour.background = Setup.secondColour;
         plane.sprite = pinkPlane;
+        PlaneColour.defaultColour = pinkPlane;
         BGMNum = 2;
     }
 
     public void colourThree()
     {
-        BGColour.background = thirdColour;
+        BGColour.background = Setup.thirdColour;
         plane.sprite = purplePlane;
+        PlaneColour.defaultColour = purplePlane;
         BGMNum = 3;
     }
 
