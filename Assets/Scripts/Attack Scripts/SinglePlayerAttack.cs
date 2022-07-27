@@ -13,10 +13,10 @@ public class SinglePlayerAttack : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private float bp1 = 1;
-    [SerializeField] private float bp2 = 4;
-    [SerializeField] private float bp3 = 3;
-    [SerializeField] private float bp4 = 3;
-    [SerializeField] private float bp5 = 7;
+    [SerializeField] private float bp2 = 3;
+    [SerializeField] private float bp3 = 2;
+    [SerializeField] private float bp4 = 2;
+    [SerializeField] private float bp5 = 5;
 
     private GameObject[] attack1_stored;
     private GameObject[] attack2_stored;
