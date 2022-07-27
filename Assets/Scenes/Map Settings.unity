@@ -3434,7 +3434,7 @@ MonoBehaviour:
   noObstacle_image: {fileID: 746471313}
   numOfObs_desc: {fileID: 678886457}
   orientation_desc: {fileID: 1172541163}
-  haveObs_desc: {fileID: 1226532000}
+  noObs_desc: {fileID: 1226532000}
   selected: {fileID: 21300000, guid: f6c1088785b78f84eabe0f122275c207, type: 3}
   unselected: {fileID: 21300000, guid: b29b6f3b8308b6a4c9a15608f9a850db, type: 3}
   num1: {fileID: 1815021175}
