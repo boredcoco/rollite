@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionController : MonoBehaviour
+public class ExplosionController : Attack
 {
     [SerializeField] private GameObject _attack2;
     [SerializeField] private int _numOfBullets = 10;
@@ -63,5 +63,9 @@ public class ExplosionController : MonoBehaviour
       }
     }
 
+    public override bool isActiveBullet()
+    {
+      return false;
+    }
 
 }

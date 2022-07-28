@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 84143746}
   - component: {fileID: 84143750}
   - component: {fileID: 84143751}
-  - component: {fileID: 84143752}
   - component: {fileID: 84143754}
   m_Layer: 0
   m_Name: Enemy
@@ -336,26 +335,6 @@ MonoBehaviour:
   attack5Time: 80
   ai_speed_increment: 1
   levelUp: {fileID: 1870974612}
---- !u!95 &84143752
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84143741}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38453c1dd44fe4ba5840e5623980ade7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &84143754
 MonoBehaviour:
   m_ObjectHideFlags: 0
