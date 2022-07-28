@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : Attack
 {
     [SerializeField] private float basePower = 1f;
 
@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
       }
     }
 
-    public bool isActiveBullet()
+    public override bool isActiveBullet()
     {
       return activeBullet;
     }

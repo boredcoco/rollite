@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoriVertiController : MonoBehaviour
+public class HoriVertiController : Attack
 {
     [SerializeField] private GameObject _prefab;
 
@@ -43,5 +43,10 @@ public class HoriVertiController : MonoBehaviour
         reusableObject.transform.position = transform.position;
         reusableObject.SetActive(true);
       }
+    }
+
+    public override bool isActiveBullet()
+    {
+      return false;
     }
 }

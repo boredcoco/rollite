@@ -10,8 +10,6 @@ public class SinglePlayerAttack : MonoBehaviour
     [SerializeField] private GameObject staminaBar;
     private AttackStamina staminaComp;
 
-    private Animator anim;
-
     [SerializeField] private float bp1 = 1;
     [SerializeField] private float bp2 = 3;
     [SerializeField] private float bp3 = 2;
@@ -33,7 +31,6 @@ public class SinglePlayerAttack : MonoBehaviour
     {
       timer = lagTime;
       staminaComp = staminaBar.GetComponent<AttackStamina>();
-      anim = GetComponent<Animator>();
 
       attack1_stored = GameObject.FindGameObjectsWithTag("Attack");
       attack2_stored = GameObject.FindGameObjectsWithTag("BulletController");
@@ -106,7 +103,6 @@ public class SinglePlayerAttack : MonoBehaviour
 
       if (staminaComp.canAttack(bp))
       {
-        anim.SetTrigger("aim");
         arr[index].transform.position = transform.position;
         arr[index].SetActive(true);
         staminaComp.depleteStamina(bp);

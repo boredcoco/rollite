@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomExplosionSpawn : MonoBehaviour
+public class RandomExplosionSpawn : Attack
 {
     [SerializeField] private GameObject ExplosionController;
     [SerializeField] private int numOfExplosions = 5;
@@ -46,5 +46,10 @@ public class RandomExplosionSpawn : MonoBehaviour
         reusableExplosions[index].SetActive(true);
       }
       index++;
+    }
+
+    public override bool isActiveBullet()
+    {
+      return false;
     }
 }
