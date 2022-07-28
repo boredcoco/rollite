@@ -5,7 +5,6 @@ using UnityEngine;
 public class PortalController : MonoBehaviour
 {
     [SerializeField] private GameObject portalTemplate;
-    [SerializeField] private float _distanceBetweenPortals = 3f;
 
     [SerializeField] private float _lowerX = -20f;
     [SerializeField] private float _upperX = 20f;
@@ -31,22 +30,13 @@ public class PortalController : MonoBehaviour
 
     private void spawnPortal()
     {
-      float portal1_x = Random.Range(_lowerX, _upperX);
+      float portal1_x = Random.Range(_lowerX, _upperX / 2);
       float portal1_y = Random.Range(_lowerY, _upperY);
       Vector3 portal1_v = new Vector3(portal1_x, portal1_y, transform.position.z);
 
-      float portal2_x = Random.Range(_lowerX, _upperX);
+      float portal2_x = Random.Range(_upperX / 2, _upperX);
       float portal2_y = Random.Range(_lowerY, _upperY);
       Vector3 portal2_v = new Vector3(portal2_x, portal2_y, transform.position.z);
-
-      while (Mathf.Abs(portal1_x - portal2_x) < _distanceBetweenPortals
-      || Mathf.Abs(portal1_y - portal2_y) < _distanceBetweenPortals)
-      {
-        portal1_x = Random.Range(_lowerX, _upperX);
-        portal1_y = Random.Range(_lowerY, _upperY);
-        portal2_x = Random.Range(_lowerX, _upperX);
-        portal2_y = Random.Range(_lowerY, _upperY);
-      }
 
       if (portal1 == null && portal2 == null)
       {
