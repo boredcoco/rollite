@@ -668,7 +668,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: RandomExplosionController
-  basePower: 9
+  basePower: 5
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -2136,7 +2136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackSelector: {fileID: 1180370960}
   _StaminaBar: {fileID: 1625006350}
-  _regenStaminaSpeed: 0.5
+  _regenStaminaSpeed: 1
   _maxStamina: 10
   debuffSound: {fileID: 619444730}
 --- !u!114 &619444728
@@ -3320,7 +3320,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: BulletController
-  basePower: 8
+  basePower: 3
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -4061,7 +4061,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: VertiController
-  basePower: 5
+  basePower: 2
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -4230,7 +4230,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: Attack
-  basePower: 3
+  basePower: 1
   _lowerX: -7
   _upperX: 10
   _lowerY: -5
@@ -6370,7 +6370,7 @@ MonoBehaviour:
   quitPopUp: {fileID: 1934927033}
   _attackStamina: {fileID: 619444725}
   _tagToFind: HoriController
-  basePower: 5
+  basePower: 2
   _lowerX: -7
   _upperX: 10
   _lowerY: -5

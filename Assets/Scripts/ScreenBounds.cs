@@ -70,13 +70,13 @@ public class ScreenBounds : MonoBehaviour
         else if (xLeftBoundResult || xRightBoundResult)
         {
             return new Vector2(worldPosition.x * -1, worldPosition.y)
-                + new Vector2(teleportOffset * signWorldPosition.x, teleportOffset)
+                + new Vector2(teleportOffset * signWorldPosition.x, 0)
                 + xOffset;
         }
         else if (yBoundResult)
         {
             return new Vector2(worldPosition.x, worldPosition.y * -1)
-                + new Vector2(teleportOffset, teleportOffset * signWorldPosition.y);
+                + new Vector2(0, teleportOffset * signWorldPosition.y);
         }
         else
         {
