@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockScore: 40
+  _unlockScore: 80
 --- !u!1001 &239808441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3337,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockScore: 10
+  _unlockScore: 20
 --- !u!1 &1180370960
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,7 +4078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockScore: 20
+  _unlockScore: 40
 --- !u!1 &1558027653
 GameObject:
   m_ObjectHideFlags: 0
@@ -6387,7 +6387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7faae0319283d4ebdcf62b64257604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockScore: 30
+  _unlockScore: 60
 --- !u!1 &2110663900
 GameObject:
   m_ObjectHideFlags: 0
