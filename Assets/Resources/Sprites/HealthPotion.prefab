@@ -428,4 +428,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ef7965aff3740b19496c0e98be5c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restoreAmount: 2
+  restoreAmount: 1

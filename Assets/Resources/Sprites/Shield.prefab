@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad21f9441f7e4463d813d003b20be33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shieldHealth: 3
+  _shieldHealth: 1
   shieldSound: {fileID: 109031175359471582}
 --- !u!50 &2564646844504831743
 Rigidbody2D:

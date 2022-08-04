@@ -120,7 +120,7 @@ MonoBehaviour:
   _upperX: 10
   _lowerY: -5
   _upperY: 5
-  _lagTime: 0.1
+  _lagTime: 0
 --- !u!50 &-4257706960211799590
 Rigidbody2D:
   serializedVersion: 4
