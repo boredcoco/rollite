@@ -49,22 +49,24 @@ public class SettingsManager : MonoBehaviour
         BGMNum = 3;
     }
 
-    public void speedOne()
+    public void setSpeed(int speed)
     {
-        BasicMovement.speed = 6f;
-        BasicMovement.dashForce = 10f;
-    }
 
-    public void speedTwo()
-    {
-        BasicMovement.speed = 8f;
-        BasicMovement.dashForce = 15f;
-    }
-
-    public void speedThree()
-    {
-        BasicMovement.speed = 12f;
-        BasicMovement.dashForce = 20f;
+        if (speed == 1)
+        {
+            BasicMovement.speed = 6f;
+            BasicMovement.dashForce = 10f;
+        }
+        else if (speed == 2)
+        {
+            BasicMovement.speed = 8f;
+            BasicMovement.dashForce = 15f;
+        }
+        else
+        {
+            BasicMovement.speed = 12f;
+            BasicMovement.dashForce = 20f;
+        }
     }
 
     public void setVolume_bgm()
