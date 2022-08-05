@@ -70,5 +70,7 @@ public class DontDestroyMusic : MonoBehaviour
         }
       }
 
+      audioMixer.SetFloat("BGM", 30f * Mathf.Log10(PlayerPrefs.GetFloat("BGMvol", 0.5f)));
+
     }
 }
