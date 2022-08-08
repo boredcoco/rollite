@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using TMPro;
 
 public class Instructions : MonoBehaviour
@@ -16,6 +17,8 @@ public class Instructions : MonoBehaviour
 
     private TMP_Text txt;
 
+    [SerializeField] private AudioSource clicksound;
+
     private void Start()
     {
       txt = GetComponent<TMP_Text>();
@@ -25,6 +28,7 @@ public class Instructions : MonoBehaviour
 
     public void next()
     {
+      clicksound.Play();
       if (index < allWords.Length - 1)
       {
         index++;
@@ -37,6 +41,7 @@ public class Instructions : MonoBehaviour
 
     public void back()
     {
+      clicksound.Play();
       if (index != 0)
       {
         index--;
