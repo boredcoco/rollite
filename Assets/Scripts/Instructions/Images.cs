@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class Images : MonoBehaviour
@@ -16,6 +17,8 @@ public class Images : MonoBehaviour
 
     private Image currentImg;
 
+    [SerializeField] private AudioSource clicksound;
+
     private void Start()
     {
         allImages = new Image[]{movement, dashing, buffs, antagonist, unlockAttacks};
@@ -24,6 +27,7 @@ public class Images : MonoBehaviour
 
     public void next()
     {
+      clicksound.Play();
       if (index < allImages.Length - 1)
       {
         index++;
@@ -38,6 +42,7 @@ public class Images : MonoBehaviour
 
     public void back()
     {
+      clicksound.Play();
       if (index != 0)
       {
         index--;
