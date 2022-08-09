@@ -41,10 +41,10 @@ public class SinglePlayerAttack : MonoBehaviour
       for (int i = 0; i < attack1_stored.Length; i++)
       {
         attack1_stored[i].SetActive(false);
-        attack2_stored[i].SetActive(false);
-        attack3_stored[i].SetActive(false);
-        attack4_stored[i].SetActive(false);
-        attack5_stored[i].SetActive(false);
+        if (i < attack2_stored.Length) attack2_stored[i].SetActive(false);
+        if (i < attack3_stored.Length) attack3_stored[i].SetActive(false);
+        if (i < attack4_stored.Length) attack4_stored[i].SetActive(false);
+        if (i < attack5_stored.Length) attack5_stored[i].SetActive(false);
       }
 
     }

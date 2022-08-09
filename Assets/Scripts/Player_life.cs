@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player_life : MonoBehaviour, Health
+public class Player_life : MonoBehaviour, Health, ShieldPlayerInteraction
 {
 
     [SerializeField] private float _health = 10f;

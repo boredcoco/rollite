@@ -9,3 +9,9 @@ public interface Health
     bool isActiveShield();
     bool isDashing();
 }
+
+public interface ShieldPlayerInteraction
+{
+    void activateShield();
+    void deactivateShield();
+}

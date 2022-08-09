@@ -49,9 +49,9 @@ public class Bullet : Attack
         bool dashing = hInterface.isDashing();
         if (!activeShield && !dashing)
         {
-          hInterface.loseHealth(basePower);
           timer = _lagTime;
           gameObject.SetActive(false);
+          hInterface.loseHealth(basePower);
         }
       } else if (collision.tag == "Shield" && timer <= 0)
       {
@@ -59,9 +59,9 @@ public class Bullet : Attack
         bool activeShield = hInterface.isActiveShield();
         bool dashing = hInterface.isDashing();
         if (activeShield && !dashing) {
-          hInterface.loseHealth(basePower);
           timer = _lagTime;
           gameObject.SetActive(false);
+          hInterface.loseHealth(basePower);
         }
       }
     }

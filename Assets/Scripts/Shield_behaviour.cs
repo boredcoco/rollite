@@ -26,9 +26,9 @@ public class Shield_behaviour : MonoBehaviour, Health
     private void OnTriggerEnter2D(Collider2D collision)
     {
       if (collision.tag == "Player" && player == null
-      && !collision.GetComponent<Player_life>().isActiveShield())
+      && !collision.GetComponent<Health>().isActiveShield())
       {
-        collision.GetComponent<Player_life>().activateShield();
+        collision.GetComponent<ShieldPlayerInteraction>().activateShield();
         shieldSound.Play();
         player = collision.gameObject;
       }
@@ -40,12 +40,12 @@ public class Shield_behaviour : MonoBehaviour, Health
       {
         if (currentHealth - amount <= 0)
         {
-          player.GetComponent<Player_life>().deactivateShield();
-          gameObject.SetActive(false);
           currentHealth = _shieldHealth;
-          player = null;
           GameObject spawner = GameObject.Find("SpawnController");
           spawner.gameObject.GetComponent<Spawnable_oneByOne>().decreaseObjCount();
+          player.GetComponent<ShieldPlayerInteraction>().deactivateShield();
+          player = null;
+          gameObject.SetActive(false);
         } else
         {
           currentHealth = currentHealth - amount;
