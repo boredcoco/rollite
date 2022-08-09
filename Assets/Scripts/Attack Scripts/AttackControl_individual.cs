@@ -22,6 +22,8 @@ public class AttackControl_individual : MonoBehaviour
     private int index = 0;
     private bool selected = false;
 
+    [SerializeField] private AttackTimer attacktimer;
+
     private void Start()
     {
       reusableObjects = GameObject.FindGameObjectsWithTag(_tagToFind);
@@ -33,9 +35,10 @@ public class AttackControl_individual : MonoBehaviour
 
     private void Update()
     {
-      if (selected == true && Input.GetMouseButtonDown(0) && !quitPopUp.activeSelf)
+      if (selected == true && Input.GetMouseButtonDown(0) && !quitPopUp.activeSelf && attacktimer.canfire())
       {
         fireBullet();
+        attacktimer.resetTimer();
       }
     }
 

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e2efbd9a9e5486d847704895fccad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePower: 1
+  basePower: 3
   _lowerX: -5
   _upperX: 10
   _lowerY: -5
