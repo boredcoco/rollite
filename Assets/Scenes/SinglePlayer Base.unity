@@ -399,7 +399,7 @@ MonoBehaviour:
   attack3Time: 40
   attack4Time: 60
   attack5Time: 80
-  ai_speed_increment: 1
+  ai_speed_increment: 1.5
   levelUp: {fileID: 1870974612}
 --- !u!114 &84143754
 MonoBehaviour:
